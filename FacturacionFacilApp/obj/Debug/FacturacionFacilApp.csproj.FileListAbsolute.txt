@@ -1,0 +1,16 @@
+C:\Users\pedro\Escritorio\Importante\Yolanda\ContabilidadSolution\FacturacionFacilApp\bin\Debug\FacturacionFacilApp.exe.config
+C:\Users\pedro\Escritorio\Importante\Yolanda\ContabilidadSolution\FacturacionFacilApp\bin\Debug\FacturacionFacilApp.exe
+C:\Users\pedro\Escritorio\Importante\Yolanda\ContabilidadSolution\FacturacionFacilApp\bin\Debug\FacturacionFacilApp.pdb
+C:\Users\pedro\Escritorio\Importante\Yolanda\ContabilidadSolution\FacturacionFacilApp\obj\Debug\FacturacionFacilApp.csproj.AssemblyReference.cache
+C:\Users\pedro\Escritorio\Importante\Yolanda\ContabilidadSolution\FacturacionFacilApp\obj\Debug\FacturacionFacilApp.csproj.SuggestedBindingRedirects.cache
+C:\Users\pedro\Escritorio\Importante\Yolanda\ContabilidadSolution\FacturacionFacilApp\obj\Debug\App.g.cs
+C:\Users\pedro\Escritorio\Importante\Yolanda\ContabilidadSolution\FacturacionFacilApp\obj\Debug\FacturacionFacilApp_MarkupCompile.cache
+C:\Users\pedro\Escritorio\Importante\Yolanda\ContabilidadSolution\FacturacionFacilApp\obj\Debug\FacturacionFacilApp_MarkupCompile.lref
+C:\Users\pedro\Escritorio\Importante\Yolanda\ContabilidadSolution\FacturacionFacilApp\obj\Debug\FacturacionFacilApp.g.resources
+C:\Users\pedro\Escritorio\Importante\Yolanda\ContabilidadSolution\FacturacionFacilApp\obj\Debug\FacturacionFacilApp.Properties.Resources.resources
+C:\Users\pedro\Escritorio\Importante\Yolanda\ContabilidadSolution\FacturacionFacilApp\obj\Debug\FacturacionFacilApp.csproj.GenerateResource.cache
+C:\Users\pedro\Escritorio\Importante\Yolanda\ContabilidadSolution\FacturacionFacilApp\obj\Debug\FacturacionFacilApp.csproj.CoreCompileInputs.cache
+C:\Users\pedro\Escritorio\Importante\Yolanda\ContabilidadSolution\FacturacionFacilApp\obj\Debug\FacturacionFacilApp.exe
+C:\Users\pedro\Escritorio\Importante\Yolanda\ContabilidadSolution\FacturacionFacilApp\obj\Debug\FacturacionFacilApp.pdb
+C:\Users\pedro\Escritorio\Importante\Yolanda\ContabilidadSolution\FacturacionFacilApp\obj\Debug\MyScripts\MainWindow.g.cs
+C:\Users\pedro\Escritorio\Importante\Yolanda\ContabilidadSolution\FacturacionFacilApp\obj\Debug\MyScripts\MainWindow.baml

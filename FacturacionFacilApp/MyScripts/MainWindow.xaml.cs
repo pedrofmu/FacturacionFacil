@@ -26,8 +26,8 @@ namespace FacturacionFacilApp
         {
             InitializeComponent();
              
-
-            try {
+            try 
+            {
                 ingresos_btn = FindName("ingresos_btn_") as Button;
                 ingresos_btn.Click += OnIngresosIsClicked;
             }

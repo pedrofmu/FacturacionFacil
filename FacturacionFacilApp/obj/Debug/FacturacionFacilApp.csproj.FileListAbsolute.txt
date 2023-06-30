@@ -16,3 +16,6 @@ C:\Users\pedro\Escritorio\Importante\Yolanda\ContabilidadSolution\FacturacionFac
 C:\Users\pedro\Escritorio\Importante\Yolanda\ContabilidadSolution\FacturacionFacilApp\obj\Debug\MyScripts\MainWindow.baml
 C:\Users\pedro\Escritorio\Importante\Yolanda\ContabilidadSolution\FacturacionFacilApp\obj\Debug\MyScripts\Ingresos\FacturaWindow.g.cs
 C:\Users\pedro\Escritorio\Importante\Yolanda\ContabilidadSolution\FacturacionFacilApp\obj\Debug\MyScripts\Ingresos\FacturaWindow.baml
+C:\Users\pedro\Escritorio\Importante\Yolanda\ContabilidadSolution\FacturacionFacilApp\bin\Debug\Newtonsoft.Json.dll
+C:\Users\pedro\Escritorio\Importante\Yolanda\ContabilidadSolution\FacturacionFacilApp\bin\Debug\Newtonsoft.Json.xml
+C:\Users\pedro\Escritorio\Importante\Yolanda\ContabilidadSolution\FacturacionFacilApp\obj\Debug\FacturacionFacilApp.csproj.CopyComplete

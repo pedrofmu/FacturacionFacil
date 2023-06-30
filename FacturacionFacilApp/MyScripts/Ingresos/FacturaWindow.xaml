@@ -7,8 +7,8 @@
         mc:Ignorable="d"
         Title="FacturaWindow" Height="700" Width="500">
     <Grid>
-        <ComboBox HorizontalAlignment="Left" Margin="55,154,0,0" VerticalAlignment="Top" Width="120"/>
-        <Label Content="Cliente" HorizontalAlignment="Left" Margin="55,129,0,0" VerticalAlignment="Top" Width="120" Height="25"/>
-        <Button Content="Nuevo cliente" HorizontalAlignment="Left" Margin="55,191,0,0" VerticalAlignment="Top"/>
+        <ComboBox Name ="clients_dropdown_" HorizontalAlignment="Left" Margin="55,154,0,0" VerticalAlignment="Top" Width="120"/>
+        <Label Name ="clients_txt_" Content="Cliente" HorizontalAlignment="Left" Margin="55,129,0,0" VerticalAlignment="Top" Width="120" Height="25"/>
+        <Button Name ="new_client_btn_" Content="Nuevo cliente" HorizontalAlignment="Left" Margin="55,191,0,0" VerticalAlignment="Top"/>
     </Grid>
 </Window>

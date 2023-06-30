@@ -1,0 +1,20 @@
+[
+  {
+    "Nombre": "Albaricoque",
+    "NIF": "21",
+    "Direccion": "C/Entenza, 40 03803 Alcoy - Alicante",
+    "Correo": "info@kyreo.es"
+  },
+  {
+    "Nombre": "Pedro",
+    "NIF": "45",
+    "Direccion": "C/Cronista, 123 03802 Alcoy - Alicante",
+    "Correo": "pedrofm3000@gmail.com"
+  },
+ {
+    "Nombre": "Andres",
+    "NIF": "45",
+    "Direccion": "C/Cronista, 123 03802 Alcoy - Alicante",
+    "Correo": "pedrofm3000@gmail.com"
+  }
+]

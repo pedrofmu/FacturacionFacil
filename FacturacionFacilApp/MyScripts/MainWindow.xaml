@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="600" Width="1000">
     <Grid>
-        <TextBox HorizontalAlignment="Left" Height="70" Margin="0,0,0,0" TextWrapping="Wrap" Text="HOLA MUNDO" VerticalAlignment="Top" Width="462" FontSize="50" FontFamily="Arial Black"/>
+        <Button x:Name="ingresos_btn_" Content="Ingreso" HorizontalAlignment="Left" Margin="350,150,0,0" VerticalAlignment="Top" Height="90" Width="350" FontSize="50" FontFamily="Cascadia Code SemiBold"/>
 
     </Grid>
 </Window>

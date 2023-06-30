@@ -1,0 +1,14 @@
+﻿<Window x:Class="FacturacionFacilApp.MyScripts.Ingresos.FacturaWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FacturacionFacilApp.MyScripts.Ingresos"
+        mc:Ignorable="d"
+        Title="FacturaWindow" Height="700" Width="500">
+    <Grid>
+        <ComboBox HorizontalAlignment="Left" Margin="55,154,0,0" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Cliente" HorizontalAlignment="Left" Margin="55,129,0,0" VerticalAlignment="Top" Width="120" Height="25"/>
+        <Button Content="Nuevo cliente" HorizontalAlignment="Left" Margin="55,191,0,0" VerticalAlignment="Top"/>
+    </Grid>
+</Window>

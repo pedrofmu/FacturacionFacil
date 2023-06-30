@@ -14,3 +14,5 @@ C:\Users\pedro\Escritorio\Importante\Yolanda\ContabilidadSolution\FacturacionFac
 C:\Users\pedro\Escritorio\Importante\Yolanda\ContabilidadSolution\FacturacionFacilApp\obj\Debug\FacturacionFacilApp.pdb
 C:\Users\pedro\Escritorio\Importante\Yolanda\ContabilidadSolution\FacturacionFacilApp\obj\Debug\MyScripts\MainWindow.g.cs
 C:\Users\pedro\Escritorio\Importante\Yolanda\ContabilidadSolution\FacturacionFacilApp\obj\Debug\MyScripts\MainWindow.baml
+C:\Users\pedro\Escritorio\Importante\Yolanda\ContabilidadSolution\FacturacionFacilApp\obj\Debug\MyScripts\Ingresos\FacturaWindow.g.cs
+C:\Users\pedro\Escritorio\Importante\Yolanda\ContabilidadSolution\FacturacionFacilApp\obj\Debug\MyScripts\Ingresos\FacturaWindow.baml

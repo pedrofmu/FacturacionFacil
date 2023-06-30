@@ -1,5 +1,7 @@
-﻿using System;
+﻿using FacturacionFacilApp.MyScripts.Ingresos;
+using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,14 +17,33 @@ using System.Windows.Shapes;
 
 namespace FacturacionFacilApp
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window
     {
+        private Button ingresos_btn;
+
+        //El inicializador de la clase MainWindow
         public MainWindow()
         {
             InitializeComponent();
+             
+
+            try {
+                ingresos_btn = FindName("ingresos_btn_") as Button;
+                ingresos_btn.Click += OnIngresosIsClicked;
+            }
+            catch
+            {
+                throw new Exception("No se ha podido conseguir acceso a alguno de los botones");
+            }
+
+        }
+
+        //Esta función es llamada cuando ingresos_btn es llamado y se encarga de cambiar de escena
+        public void OnIngresosIsClicked(object sender, RoutedEventArgs e)
+        {
+            FacturaWindow facturaWindow = new FacturaWindow();
+            facturaWindow.Activate();
+            facturaWindow.Show();
         }
     }
 }

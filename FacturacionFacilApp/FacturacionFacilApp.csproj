@@ -58,6 +58,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="MyScripts\Ingresos\AddNewClientWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MyScripts\Ingresos\FacturaWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -70,12 +74,18 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="MyScripts\Ingresos\AddNewClientWindow.xaml.cs">
+      <DependentUpon>AddNewClientWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MyScripts\Ingresos\ClientesController.cs" />
     <Compile Include="MyScripts\Ingresos\FacturaWindow.xaml.cs">
       <DependentUpon>FacturaWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="MyScripts\Ingresos\JsonModels\Cliente.cs" />
-    <Compile Include="MyScripts\Ingresos\JsonModels\IngresosJsonController.cs" />
+    <Compile Include="MyScripts\Ingresos\JsonControllers\Cliente.cs" />
+    <Compile Include="MyScripts\Ingresos\JsonControllers\Factura.cs" />
+    <Compile Include="MyScripts\Ingresos\CrearFacturaController.cs" />
+    <Compile Include="MyScripts\Ingresos\JsonControllers\ClientesJsonController.cs" />
+    <Compile Include="MyScripts\Ingresos\JsonControllers\FacturasJsonController.cs" />
     <Compile Include="MyScripts\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>

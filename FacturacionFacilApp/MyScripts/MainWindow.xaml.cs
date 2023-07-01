@@ -21,6 +21,8 @@ namespace FacturacionFacilApp
     {
         private Button ingresos_btn;
 
+        private FacturaWindow factura_window;
+
         //El inicializador de la clase MainWindow
         public MainWindow()
         {
@@ -41,9 +43,13 @@ namespace FacturacionFacilApp
         //Esta función es llamada cuando ingresos_btn es llamado y se encarga de cambiar de escena
         public void OnIngresosIsClicked(object sender, RoutedEventArgs e)
         {
-            FacturaWindow facturaWindow = new FacturaWindow();
-            facturaWindow.Activate();
-            facturaWindow.Show();
+            if (factura_window is null)
+            {
+                factura_window = new FacturaWindow();
+            }
+
+            this.Close();
+            factura_window.Show();
         }
     }
 }

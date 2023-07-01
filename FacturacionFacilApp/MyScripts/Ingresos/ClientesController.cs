@@ -14,8 +14,8 @@ namespace FacturacionFacilApp.MyScripts.Ingresos
     public class ClientesController
     {
         public ComboBox clients_dropdown;
-        public List<Cliente> clientes_list { get; private set; }
-        public Uri json_path;
+        public static List<Cliente> clientes_list { get; private set; }
+        public static Uri json_path;
 
         public ClientesController(ComboBox _clients_dropdown)
         {
@@ -23,51 +23,23 @@ namespace FacturacionFacilApp.MyScripts.Ingresos
             json_path = new Uri("Json/Clientes.json", UriKind.Relative);
 
             GetClientesFromFile();
-        }
 
-        //Funcion que se encarga que cuando se presione el boton de nuevo cliente y copie el dato al json
-        public void SerlializeNewClient(object sender, RoutedEventArgs e)
-        {
-            List<Cliente> clientes = new List<Cliente>() {
-                new Cliente
-                {
-                    Nombre = "Rosana",
-                    NIF = "21",
-                    Direccion = "C/Entenza, 40 03803 Alcoy - Alicante",
-                    Correo = "info@kyreo.es"
-                },
-                new Cliente
-                {
-                    Nombre = "Pedro",
-                    NIF = "45",
-                    Direccion = "C/Cronista, 123 03802 Alcoy - Alicante",
-                    Correo = "pedrofm3000@gmail.com"
-                }
+            clients_dropdown.DropDownOpened += (o, e) => 
+            { 
+                RefreshDropdown(clients_dropdown); 
             };
-
-            IngresosJsonController.SerializeClients(clientes, json_path.ToString());
-
-            clientes_list = clientes;
-
-            RefreshDropdown();
         }
 
+        //Consigue los datos del json y los devuelve a la variable de clientes_list
         public void GetClientesFromFile()
         {
-            string clients;
+            clientes_list = ClientesJsonController.DeserializeClients(json_path);
 
-            using (var reader = new StreamReader(json_path.ToString()))
-            {
-                clients = reader.ReadToEnd();
-            }
-
-            clientes_list = JsonConvert.DeserializeObject<List<Cliente>>(clients);
-
-            RefreshDropdown();
+            RefreshDropdown(clients_dropdown);
         }
-
+ 
         //Refresca el dropdown
-        private void RefreshDropdown()
+        private void RefreshDropdown(ComboBox _combox)
         {
             List<string> clientes_name = new List<string>();
 
@@ -75,7 +47,7 @@ namespace FacturacionFacilApp.MyScripts.Ingresos
             {
                 clientes_name.Add(cliente.Nombre);
             }
-            clients_dropdown.ItemsSource = clientes_name;
+            _combox.ItemsSource = clientes_name;
         }
     }
 }

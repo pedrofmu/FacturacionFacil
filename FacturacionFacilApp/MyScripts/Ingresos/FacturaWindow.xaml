@@ -10,7 +10,13 @@
         <ComboBox Name="clients_dropdown_" HorizontalAlignment="Left" Margin="55,154,0,0" VerticalAlignment="Top" Width="120" />
         <Label Name="clients_txt_" Content="Cliente" HorizontalAlignment="Left" Margin="55,129,0,0" VerticalAlignment="Top" Width="120" Height="25"/>
         <Button Name="new_client_btn_" Content="Nuevo cliente" HorizontalAlignment="Left" Margin="55,191,0,0" VerticalAlignment="Top" Click="OnNewClientIsClicked"/>
-        <TextBox Name="dinero_txt_" HorizontalAlignment="Left" Margin="55,256,0,0" TextWrapping="Wrap" Text="Dinero" VerticalAlignment="Top" Width="120"/>
-        <Button Name="guardad_factura_btn_" Content="Guardad" HorizontalAlignment="Left" Margin="55,342,0,0" VerticalAlignment="Top" Width="120" Click="guardad_factura_btn__Click"/>
+        <Button Name="guardad_factura_btn_" Content="Guardad" HorizontalAlignment="Left" Margin="55,484,0,0" VerticalAlignment="Top" Width="120" Click="guardad_factura_btn__Click"/>
+        <TextBox Name="fecha_box_"  HorizontalAlignment="Left" Margin="250,92,0,0" TextWrapping="Wrap" Text="Introduzca la fecha de hoy" VerticalAlignment="Top" Width="174" />
+        <TextBlock Name="selecionar_letra_txt_" HorizontalAlignment="Left" Margin="250,134,0,0" TextWrapping="Wrap" Text="Selecciona una letra" VerticalAlignment="Top" Width="174"/>
+        <ComboBox Name="selecionar_letra_combobox_" HorizontalAlignment="Left" Margin="250,154,0,0" VerticalAlignment="Top" Width="120"/>
+        <TextBox Name="unidades_producto_txt_" HorizontalAlignment="Left" Margin="55,277,0,0" TextWrapping="Wrap" Text="Unidades " VerticalAlignment="Top" Width="60" FontSize="10"/>
+        <TextBox Name="tipo_unidad_txt_" HorizontalAlignment="Left" Margin="132,277,0,0" TextWrapping="Wrap" Text="Tipo de unidad" VerticalAlignment="Top" Width="108" FontSize="10"/>
+        <TextBox x:Name="precio_unidad_txt_" HorizontalAlignment="Left" Margin="262,277,0,0" TextWrapping="Wrap" Text="Precio por unidad" VerticalAlignment="Top" Width="108" FontSize="10"/>
+        <TextBox x:Name="iva_txt_" HorizontalAlignment="Left" Margin="393,277,0,0" TextWrapping="Wrap" Text="IVA " VerticalAlignment="Top" Width="60" FontSize="10"/>
     </Grid>
 </Window>

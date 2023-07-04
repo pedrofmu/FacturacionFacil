@@ -6,7 +6,7 @@
     "Correo": "info@kyreo.es"
   },
   {
-    "Nombre": "Pedro",
+    "Nombre": "Asdjasoufhhasfg",
     "NIF": "45",
     "Direccion": "C/Cronista, 123 03802 Alcoy - Alicante",
     "Correo": "pedrofm3000@gmail.com"
@@ -16,5 +16,11 @@
     "NIF": "asd",
     "Direccion": "Direccion",
     "Correo": "Correo"
+  },
+  {
+    "Nombre": "Vida Sana",
+    "NIF": "G59",
+    "Direccion": "Pallars 85",
+    "Correo": "admin@vidasana.com"
   }
 ]

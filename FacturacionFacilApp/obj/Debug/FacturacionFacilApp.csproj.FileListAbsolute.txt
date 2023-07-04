@@ -21,3 +21,7 @@ C:\Users\pedro\Escritorio\Importante\Yolanda\ContabilidadSolution\FacturacionFac
 C:\Users\pedro\Escritorio\Importante\Yolanda\ContabilidadSolution\FacturacionFacilApp\obj\Debug\FacturacionFacilApp.csproj.CopyComplete
 C:\Users\pedro\Escritorio\Importante\Yolanda\ContabilidadSolution\FacturacionFacilApp\obj\Debug\MyScripts\Ingresos\AddNewClientWindow.g.cs
 C:\Users\pedro\Escritorio\Importante\Yolanda\ContabilidadSolution\FacturacionFacilApp\obj\Debug\MyScripts\Ingresos\AddNewClientWindow.baml
+C:\Users\pedro\Escritorio\Importante\Yolanda\ContabilidadSolution\FacturacionFacilApp\obj\Debug\MyScripts\MessagesWindows\ErrorWindow.g.cs
+C:\Users\pedro\Escritorio\Importante\Yolanda\ContabilidadSolution\FacturacionFacilApp\obj\Debug\MyScripts\MessagesWindows\PopUpWindow.g.cs
+C:\Users\pedro\Escritorio\Importante\Yolanda\ContabilidadSolution\FacturacionFacilApp\obj\Debug\MyScripts\MessagesWindows\ErrorWindow.baml
+C:\Users\pedro\Escritorio\Importante\Yolanda\ContabilidadSolution\FacturacionFacilApp\obj\Debug\MyScripts\MessagesWindows\PopUpWindow.baml

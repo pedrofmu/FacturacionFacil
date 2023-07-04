@@ -81,17 +81,33 @@
     <Compile Include="MyScripts\Ingresos\FacturaWindow.xaml.cs">
       <DependentUpon>FacturaWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="MyScripts\Ingresos\JsonControllers\Cliente.cs" />
-    <Compile Include="MyScripts\Ingresos\JsonControllers\Factura.cs" />
+    <Compile Include="MyScripts\Ingresos\JsonControllers\Models\Cliente.cs" />
+    <Compile Include="MyScripts\Ingresos\JsonControllers\Models\Factura.cs" />
     <Compile Include="MyScripts\Ingresos\CrearFacturaController.cs" />
     <Compile Include="MyScripts\Ingresos\JsonControllers\ClientesJsonController.cs" />
     <Compile Include="MyScripts\Ingresos\JsonControllers\FacturasJsonController.cs" />
+    <Compile Include="MyScripts\Ingresos\JsonControllers\Models\UnidadComprada.cs" />
     <Compile Include="MyScripts\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="MyScripts\MessagesWindows\ErrorWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MyScripts\MessagesWindows\PopUpWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MyScripts\MessagesWindows\ErrorWindow.xaml.cs">
+      <DependentUpon>ErrorWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MyScripts\MessagesWindows\PopUpWindow.xaml.cs">
+      <DependentUpon>PopUpWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MyScripts\ShowMessageOrError.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -117,6 +133,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="MyScripts\MessagesWindows\warning-error.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

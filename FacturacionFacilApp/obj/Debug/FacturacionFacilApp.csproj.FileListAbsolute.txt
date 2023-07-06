@@ -25,3 +25,5 @@ C:\Users\pedro\Escritorio\Importante\Yolanda\ContabilidadSolution\FacturacionFac
 C:\Users\pedro\Escritorio\Importante\Yolanda\ContabilidadSolution\FacturacionFacilApp\obj\Debug\MyScripts\MessagesWindows\PopUpWindow.g.cs
 C:\Users\pedro\Escritorio\Importante\Yolanda\ContabilidadSolution\FacturacionFacilApp\obj\Debug\MyScripts\MessagesWindows\ErrorWindow.baml
 C:\Users\pedro\Escritorio\Importante\Yolanda\ContabilidadSolution\FacturacionFacilApp\obj\Debug\MyScripts\MessagesWindows\PopUpWindow.baml
+C:\Users\pedro\Escritorio\Importante\Yolanda\ContabilidadSolution\FacturacionFacilApp\obj\Debug\MyScripts\Ingresos\AddNewProvedorWindow.g.cs
+C:\Users\pedro\Escritorio\Importante\Yolanda\ContabilidadSolution\FacturacionFacilApp\obj\Debug\MyScripts\Ingresos\AddNewProvedorWindow.baml

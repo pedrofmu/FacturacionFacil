@@ -6,17 +6,23 @@
         xmlns:local="clr-namespace:FacturacionFacilApp.MyScripts.Ingresos"
         mc:Ignorable="d"
         Title="FacturaWindow" Height="700" Width="500">
-    <Grid>
+    <Grid Name="main_grid_">
+        <ComboBox x:Name="provedores_dropdown_" HorizontalAlignment="Left" Margin="55,33,0,0" VerticalAlignment="Top" Width="120" />
+        <Label x:Name="provedores_txt_" Content="Provedor" HorizontalAlignment="Left" Margin="55,8,0,0" VerticalAlignment="Top" Width="120" Height="25"/>
+        <Button x:Name="nuevo_provedor_btn_" Content="Nuevo provedor" HorizontalAlignment="Left" Margin="55,70,0,0" VerticalAlignment="Top" Click="NuevoProvedorBTN"/>
         <ComboBox Name="clients_dropdown_" HorizontalAlignment="Left" Margin="55,154,0,0" VerticalAlignment="Top" Width="120" />
         <Label Name="clients_txt_" Content="Cliente" HorizontalAlignment="Left" Margin="55,129,0,0" VerticalAlignment="Top" Width="120" Height="25"/>
         <Button Name="new_client_btn_" Content="Nuevo cliente" HorizontalAlignment="Left" Margin="55,191,0,0" VerticalAlignment="Top" Click="OnNewClientIsClicked"/>
-        <Button Name="guardad_factura_btn_" Content="Guardad" HorizontalAlignment="Left" Margin="55,484,0,0" VerticalAlignment="Top" Width="120" Click="guardad_factura_btn__Click"/>
-        <TextBox Name="fecha_box_"  HorizontalAlignment="Left" Margin="250,92,0,0" TextWrapping="Wrap" Text="Introduzca la fecha de hoy" VerticalAlignment="Top" Width="174" />
+        <Button Name="guardad_factura_btn_" Content="Guardad" HorizontalAlignment="Left" Margin="55,549,0,0" VerticalAlignment="Top" Width="120" Click="GuardarFacturaBTN"/>
+        <TextBox Name="fecha_box_"  HorizontalAlignment="Left" Margin="250,15,0,0" TextWrapping="Wrap" Text="Introduzca la fecha de hoy" VerticalAlignment="Top" Width="174" />
         <TextBlock Name="selecionar_letra_txt_" HorizontalAlignment="Left" Margin="250,134,0,0" TextWrapping="Wrap" Text="Selecciona una letra" VerticalAlignment="Top" Width="174"/>
         <ComboBox Name="selecionar_letra_combobox_" HorizontalAlignment="Left" Margin="250,154,0,0" VerticalAlignment="Top" Width="120"/>
-        <TextBox Name="unidades_producto_txt_" HorizontalAlignment="Left" Margin="55,277,0,0" TextWrapping="Wrap" Text="Unidades " VerticalAlignment="Top" Width="60" FontSize="10"/>
-        <TextBox Name="tipo_unidad_txt_" HorizontalAlignment="Left" Margin="132,277,0,0" TextWrapping="Wrap" Text="Tipo de unidad" VerticalAlignment="Top" Width="108" FontSize="10"/>
-        <TextBox x:Name="precio_unidad_txt_" HorizontalAlignment="Left" Margin="262,277,0,0" TextWrapping="Wrap" Text="Precio por unidad" VerticalAlignment="Top" Width="108" FontSize="10"/>
-        <TextBox x:Name="iva_txt_" HorizontalAlignment="Left" Margin="393,277,0,0" TextWrapping="Wrap" Text="IVA " VerticalAlignment="Top" Width="60" FontSize="10"/>
+        <Button Name="añadir_unidad_btn_" Content=" + " HorizontalAlignment="Left" Margin="434,244,0,0" VerticalAlignment="Top" Click="AñadirUnidadBTN"/>
+        <Button x:Name="eliminar_unidad_btn_" Content=" - " HorizontalAlignment="Left" Margin="459,244,0,0" VerticalAlignment="Top" Click="EliminarUnidadBTN" />
+        <Button x:Name="subir_fila_btn_" Content=" ⬆️ " HorizontalAlignment="Left" Margin="372,244,0,0" VerticalAlignment="Top" Click="SubirFilaBTN"/>
+        <Button x:Name="bajar_fila_btn_" Content=" ⬇️ " HorizontalAlignment="Left" Margin="394,244,0,0" VerticalAlignment="Top" Click="BajarFilaBTN"/>
+        <ComboBox Name="irpf_dropdown_" HorizontalAlignment="Left" Margin="55,493,0,0" VerticalAlignment="Top" Width="120">
+        </ComboBox>
+
     </Grid>
 </Window>

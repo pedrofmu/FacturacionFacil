@@ -1,0 +1,58 @@
+[
+  {
+    "Numero": "a1",
+    "Cliente": {
+      "Nombre": "Vida Sana",
+      "NIF": "G12",
+      "Direccion": "casa 2",
+      "Correo": "info@Kyereo.com"
+    },
+    "Provedor": {
+      "Nombre": "123",
+      "NIF": "123",
+      "Direccion": "123",
+      "Correo": "23"
+    },
+    "Fecha": "2023-07-06",
+    "UnidadesCompradas": [
+      {
+        "UnidadesDelProducto": 2,
+        "TipoDeUnidad": "2",
+        "PrecioPorUnidad": 2.0,
+        "IVA": 2.0,
+        "AñadidoPorIVA": 0.07999992,
+        "PrecioConIVA": 4.08
+      }
+    ],
+    "TotalBaseImponible": 4.08,
+    "IRPF": "Ninguno"
+  },
+  {
+    "Numero": "a2",
+    "Cliente": {
+      "Nombre": "Vida Sana",
+      "NIF": "G12",
+      "Direccion": "casa 2",
+      "Correo": "info@Kyereo.com"
+    },
+    "Provedor": {
+      "Nombre": "Yolanda",
+      "NIF": "G56",
+      "Direccion": "yoli@gmail.com",
+      "Correo": "Correo"
+    },
+    "Fecha": "2023-07-06",
+    "UnidadesCompradas": [
+      {
+        "UnidadesDelProducto": 10,
+        "TipoDeUnidad": "Rabano",
+        "PrecioPorUnidad": 5.0,
+        "IVA": 7.0,
+        "AñadidoPorIVA": 3.5,
+        "PrecioConIVA": 53.5
+      }
+    ],
+    "TotalBaseImponible": 49.755,
+    "IRPF": "7"
+  }
+]

@@ -1,4 +1,5 @@
-﻿using FacturacionFacilApp.MyScripts.Ingresos.JsonModels;
+﻿using FacturacionFacilApp.MyScripts.Ingresos.JsonControllers;
+using FacturacionFacilApp.MyScripts.Ingresos.JsonModels;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -41,13 +42,13 @@ namespace FacturacionFacilApp.MyScripts.Ingresos
         //Refresca el dropdown
         private void RefreshDropdown(ComboBox _combox)
         {
-            List<string> clientes_name = new List<string>();
+            List<string> provedores_list = new List<string>();
 
             foreach (Cliente cliente in clientes_list)
             {
-                clientes_name.Add(cliente.Nombre);
+                provedores_list.Add(cliente.Nombre);
             }
-            _combox.ItemsSource = clientes_name;
+            _combox.ItemsSource = provedores_list;
         }
     }
 }

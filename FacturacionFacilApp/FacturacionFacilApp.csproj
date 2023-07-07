@@ -193,6 +193,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="MyScripts\MostarCuentas\MostrarIngresos.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MyScripts\MessagesWindows\ErrorWindow.xaml.cs">
@@ -200,6 +204,9 @@
     </Compile>
     <Compile Include="MyScripts\MessagesWindows\PopUpWindow.xaml.cs">
       <DependentUpon>PopUpWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MyScripts\MostarCuentas\MostrarIngresos.xaml.cs">
+      <DependentUpon>MostrarIngresos.xaml</DependentUpon>
     </Compile>
     <Compile Include="MyScripts\ShowMessageOrError.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">

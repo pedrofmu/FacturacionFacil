@@ -13,7 +13,7 @@
         <ComboBox Name="clients_dropdown_" HorizontalAlignment="Left" Margin="55,154,0,0" VerticalAlignment="Top" Width="120" />
         <Label Name="clients_txt_" Content="Cliente" HorizontalAlignment="Left" Margin="55,129,0,0" VerticalAlignment="Top" Width="120" Height="25"/>
         <Button Name="new_client_btn_" Content="Nuevo cliente" HorizontalAlignment="Left" Margin="55,191,0,0" VerticalAlignment="Top" Click="OnNewClientIsClicked"/>
-        <TextBox Name="fecha_box_"  HorizontalAlignment="Left" Margin="250,15,0,0" TextWrapping="Wrap" Text="Introduzca la fecha de hoy" VerticalAlignment="Top" Width="174" />
+        <TextBox Name="fecha_box_"  HorizontalAlignment="Left" Margin="250,33,0,0" TextWrapping="Wrap" Text="Introduzca la fecha de hoy" VerticalAlignment="Top" Width="174" Height="22" />
         <TextBlock Name="selecionar_letra_txt_" HorizontalAlignment="Left" Margin="250,134,0,0" TextWrapping="Wrap" Text="Selecciona una letra" VerticalAlignment="Top" Width="174"/>
         <ComboBox Name="selecionar_letra_combobox_" HorizontalAlignment="Left" Margin="250,154,0,0" VerticalAlignment="Top" Width="120"/>
         <Button Name="añadir_unidad_btn_" Content=" + " HorizontalAlignment="Left" Margin="434,244,0,0" VerticalAlignment="Top" Click="AñadirUnidadBTN"/>
@@ -23,7 +23,7 @@
         <Label Name="irpf_txt_" Content="IRPF" HorizontalAlignment="Left" Margin="55,491,0,0" VerticalAlignment="Top" Width="120"/>
         <ComboBox Name="irpf_dropdown_" HorizontalAlignment="Left" Margin="55,515,0,0" VerticalAlignment="Top" Width="120"></ComboBox>
         <Button Name="guardad_factura_btn_" Content="Guardad" HorizontalAlignment="Left" Margin="55,571,0,0" VerticalAlignment="Top" Width="120" Click="GuardarFacturaBTN"/>
-        <Label x:Name="datos_pago_txt_" Content="Contdiciones y forma de pago" HorizontalAlignment="Left" Margin="250,489,0,0" VerticalAlignment="Top" Width="174"/>
+        <Label x:Name="datos_pago_txt_" Content="Condiciones y forma de pago" HorizontalAlignment="Left" Margin="250,489,0,0" VerticalAlignment="Top" Width="174"/>
         <TextBox Name="datos_del_pago_textbox_" HorizontalAlignment="Left" Margin="250,515,0,0" TextWrapping="Wrap" Text="Introduzca aquí los datos de pago" VerticalAlignment="Top" Width="217" Height="48"/>
 
     </Grid>

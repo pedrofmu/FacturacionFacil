@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace FacturacionFacilApp.MyScripts
 {
+    //Esta clase se encarga de mostrar si hay un error
     public class ShowMessageOrError
     {
         public static void ShowError(string error_to_show)

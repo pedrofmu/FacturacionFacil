@@ -12,10 +12,11 @@ namespace FacturacionFacilApp.MyScripts.Ingresos.JsonModels
     {
         public string Numero { get; set; }  //letra + numero ej: A1 A2 A63 T48
         public Cliente Cliente { get; set; }
-        public Provedor Provedor { get; set; }
+        public Proveedor Proveedor { get; set; }
         public string Fecha { get; set; }
         public UnidadComprada[] UnidadesCompradas { get; set; }
         public float TotalBaseImponible { get; set; } //Total base imponible UnidadesTotalesSumadas
         public string RestadoPorIRPF { get; set; }
+        public string CondicionesFormaDePago { get; set; }
     }
 }

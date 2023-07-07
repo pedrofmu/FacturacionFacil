@@ -1,8 +1,8 @@
 [
   {
     "Nombre": "Vida Sana",
-    "NIF": "G12",
-    "Direccion": "casa 2",
-    "Correo": "info@Kyereo.com"
+    "Identificador": "T67",
+    "Direccion": "Vida sana city",
+    "Contacto": "vidasana@mail.com"
   }
 ]

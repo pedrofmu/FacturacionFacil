@@ -10,10 +10,11 @@ using System.Windows.Controls;
 
 namespace FacturacionFacilApp.MyScripts.Ingresos
 {
+    //Clase que se encarga de controlar la selecciond el provedor
     public class ProvedoresController
     {
         public ComboBox provedores_dropdown;
-        public static List<Provedor> provedores_list { get; private set; }
+        public static List<Proveedor> provedores_list { get; private set; }
         public static Uri json_path;
 
         public ProvedoresController(ComboBox _clients_dropdown)
@@ -32,7 +33,7 @@ namespace FacturacionFacilApp.MyScripts.Ingresos
         //Consigue los datos del json y los devuelve a la variable de clientes_list
         public void GetProvedoresFromFile()
         {
-            provedores_list = ProvedoresJsonController.DeserializeProvedores(json_path);
+            provedores_list = ProveedoresJsonController.DeserializeProvedores(json_path);
 
             RefreshDropdown(provedores_dropdown);
         }
@@ -42,7 +43,7 @@ namespace FacturacionFacilApp.MyScripts.Ingresos
         {
             List<string> provedores_list = new List<string>();
 
-            foreach (Provedor provedores in ProvedoresController.provedores_list)
+            foreach (Proveedor provedores in ProvedoresController.provedores_list)
             {
                 provedores_list.Add(provedores.Nombre);
             }

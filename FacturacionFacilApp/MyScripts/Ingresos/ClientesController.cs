@@ -12,6 +12,7 @@ using System.Windows.Controls;
 
 namespace FacturacionFacilApp.MyScripts.Ingresos
 {
+    //Clase para controlar la selecion de clientes
     public class ClientesController
     {
         public ComboBox clients_dropdown;

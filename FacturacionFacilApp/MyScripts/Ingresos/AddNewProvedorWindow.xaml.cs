@@ -23,6 +23,7 @@ namespace FacturacionFacilApp.MyScripts.Ingresos
         {
             InitializeComponent();
 
+            // Asigna los eventos TextChanged a los campos de texto para restaurar su estilo y opacidad
             nombre_txt_.TextChanged += (e, o) =>
             {
                 nombre_txt_.FontStyle = FontStyles.Normal;
@@ -50,18 +51,22 @@ namespace FacturacionFacilApp.MyScripts.Ingresos
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            List<Provedor> provedores = ProvedoresJsonController.DeserializeProvedores(ProvedoresController.json_path);
+            // Deserializa la lista de proveedores desde un archivo JSON
+            List<Proveedor> provedores = ProveedoresJsonController.DeserializeProvedores(ProvedoresController.json_path);
 
-            provedores.Add(new Provedor
+            // Agrega un nuevo proveedor a la lista utilizando los valores de los campos de texto
+            provedores.Add(new Proveedor
             {
                 Nombre = nombre_txt_.Text,
-                NIF = nif_txt_.Text,
+                Identificador = nif_txt_.Text,
                 Direccion = direccion_txt_.Text,
-                Correo = correo_txt_.Text
+                Contacto = correo_txt_.Text
             });
 
-            ProvedoresJsonController.SerializeProvedores(provedores, ProvedoresController.json_path.ToString());
+            // Serializa la lista actualizada de proveedores y guarda los cambios en el archivo JSON
+            ProveedoresJsonController.SerializeProvedores(provedores, ProvedoresController.json_path.ToString());
 
+            // Cierra la ventana actual
             this.Close();
         }
     }

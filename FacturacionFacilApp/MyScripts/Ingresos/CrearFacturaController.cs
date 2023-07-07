@@ -9,7 +9,8 @@ using System.Windows.Markup;
 
 namespace FacturacionFacilApp.MyScripts.Ingresos.JsonControllers
 {
-    internal class CrearFacturaController
+    //Clase para crear la factura
+    public class CrearFacturaController
     {
         public static Uri json_path { get; private set; }
 
@@ -17,7 +18,9 @@ namespace FacturacionFacilApp.MyScripts.Ingresos.JsonControllers
         {
             json_path = new Uri("Json/Facturas.json", UriKind.Relative);
         }
-        public void CrearFactura(string _letra_factura, Provedor _provedor, Cliente _cliente, string _fecha, List<UnidadComprada> _unidades_compradas, string _irpf)
+
+        //Obtine los valores para la factura y los crea
+        public void CrearFactura(string _letra_factura, Proveedor _provedor, Cliente _cliente, string _fecha, List<UnidadComprada> _unidades_compradas, string _irpf, string _condiciones_forma_pago)
         {
             float irpf = 0f;
             if (!float.TryParse(_irpf, out irpf))
@@ -28,22 +31,29 @@ namespace FacturacionFacilApp.MyScripts.Ingresos.JsonControllers
             List<Factura> factura_list = FacturasJsonController.GetFacturasFromJson(json_path.ToString());
 
             float dinero_total = ConseguirPrecioTotal(_unidades_compradas, irpf);
-            string numero = HacerNumeroDeFactura(_letra_factura, factura_list); 
+            string numero = HacerNumeroDeFactura(_letra_factura, factura_list);
 
-            factura_list.Add( new Factura
+            Factura factura = new Factura
             {
                 Numero = numero,
-                Provedor = _provedor,
+                Proveedor = _provedor,
                 Cliente = _cliente,
                 Fecha = _fecha,
                 UnidadesCompradas = _unidades_compradas.ToArray(),
                 TotalBaseImponible = dinero_total,
-                RestadoPorIRPF = _irpf
-            });
+                RestadoPorIRPF = _irpf,
+                CondicionesFormaDePago = _condiciones_forma_pago
+            };
 
-            FacturasJsonController.SerializeFacturas(factura_list, json_path.ToString());
+            if (CrearPDFDeFactura.CrearPDF(factura))
+            {
+                factura_list.Add(factura);
+
+                FacturasJsonController.SerializeFacturas(factura_list, json_path.ToString());
+            }
         }
 
+        //Genera el numero de serie de la factura
         string HacerNumeroDeFactura(string _letra_factura, List<Factura> _facturas)
         {
             List<int> numeros = new List<int>();
@@ -62,6 +72,7 @@ namespace FacturacionFacilApp.MyScripts.Ingresos.JsonControllers
             return _letra_factura + (numeros.Last() + 1);
         }
 
+        //Calcula el precio total de la factura
         float ConseguirPrecioTotal(List<UnidadComprada> _unidades_compradas, float IRPF)
         {
             float precio_total = 0;

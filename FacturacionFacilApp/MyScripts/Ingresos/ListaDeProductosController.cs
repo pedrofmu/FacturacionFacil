@@ -10,6 +10,7 @@ using System.Windows.Shapes;
 
 namespace FacturacionFacilApp.MyScripts
 {
+    //Esta clase se encarga de controlar la lista con los diferentes productos
     public class ListaDeProductosController
     {
         public List<Linea> lineas { get; private set; }
@@ -27,6 +28,8 @@ namespace FacturacionFacilApp.MyScripts
             lineas = new List<Linea>();
             starting_position = _starting_position;
         }
+
+        //Añade un nuevo producto
         public void AñadirLinea()
         {
             if (lineas is null)
@@ -52,6 +55,7 @@ namespace FacturacionFacilApp.MyScripts
             }
         }
 
+        //Elimina el ultimo producto
         public void EliminarLinea()
         {
             if (lineas.Count > 0)
@@ -73,6 +77,8 @@ namespace FacturacionFacilApp.MyScripts
                 ActualizarLineas();
             }
         }
+
+        //Ajusta visualizacion de las lineas
         public void ActualizarLineas()
         {
             float vertical_margin = starting_position;
@@ -108,6 +114,7 @@ namespace FacturacionFacilApp.MyScripts
             }
         }
 
+        //Sube una de las filas en la visualizacion
         public void SubirFila()
         {
             if (current_index > 0)
@@ -117,6 +124,7 @@ namespace FacturacionFacilApp.MyScripts
             }
         }
 
+        //Baja una de las filas en la visualizacion
         public void BajarFila()
         {
             if (current_index + 5 < lineas.Count)
@@ -126,6 +134,7 @@ namespace FacturacionFacilApp.MyScripts
             }
         }
 
+        //Obtiene las unidades representadas en la lista 
         public bool ConseguirUnidades(out List<UnidadComprada> _unidades_compradas)
         {
             List<UnidadComprada> unidades_compradas = new List<UnidadComprada>();
@@ -149,6 +158,7 @@ namespace FacturacionFacilApp.MyScripts
             return true;
         }
 
+        //Funcion que se encarga de crear las unidades
         UnidadComprada CrearUnidad(string _cantiadad_uniades, string _tipo_unidad, string _precio_uniada, string _IVA)
         {
             float precio_total = float.Parse(_cantiadad_uniades) * float.Parse(_precio_uniada) + (float.Parse(_cantiadad_uniades) * float.Parse(_precio_uniada) * (float.Parse(_IVA) / 100));
@@ -171,6 +181,7 @@ namespace FacturacionFacilApp.MyScripts
         }
     }
 
+    //Clase para representar cada una de las lineas
     public class Linea
     {
         public int indice;

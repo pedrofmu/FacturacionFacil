@@ -11,8 +11,7 @@ namespace FacturacionFacilApp.MyScripts.Ingresos.JsonControllers
 {
     public class FacturasJsonController
     {
-
-        //Devuelve una lista de facturas del archivo Json
+        // Devuelve una lista de facturas del archivo Json
         public static List<Factura> GetFacturasFromJson(string _path)
         {
             string facturas;
@@ -32,6 +31,7 @@ namespace FacturacionFacilApp.MyScripts.Ingresos.JsonControllers
             }
         }
 
+        // Serializa una lista de facturas y la guarda en un archivo Json
         public static void SerializeFacturas(List<Factura> _facturas_list, string _path)
         {
             string json = JsonConvert.SerializeObject(_facturas_list.ToArray(), Formatting.Indented);

@@ -160,6 +160,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="MyScripts\ControladorURI.cs" />
     <Compile Include="MyScripts\Ingresos\AddNewClientWindow.xaml.cs">
       <DependentUpon>AddNewClientWindow.xaml</DependentUpon>
     </Compile>
@@ -181,6 +182,7 @@
     <Compile Include="MyScripts\Ingresos\JsonControllers\ProveedoresJsonController.cs" />
     <Compile Include="MyScripts\Ingresos\ListaDeProductosController.cs" />
     <Compile Include="MyScripts\Ingresos\ProvedoresController.cs" />
+    <Compile Include="MyScripts\LibroDeRegistro\ObtenerDataAMostrar.cs" />
     <Compile Include="MyScripts\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -189,11 +191,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="MyScripts\MessagesWindows\PopUpWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="MyScripts\MostarCuentas\MostrarIngresos.xaml">
+    <Page Include="MyScripts\LibroDeRegistro\LibroDeRegistroWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -202,11 +200,8 @@
     <Compile Include="MyScripts\MessagesWindows\ErrorWindow.xaml.cs">
       <DependentUpon>ErrorWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="MyScripts\MessagesWindows\PopUpWindow.xaml.cs">
-      <DependentUpon>PopUpWindow.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="MyScripts\MostarCuentas\MostrarIngresos.xaml.cs">
-      <DependentUpon>MostrarIngresos.xaml</DependentUpon>
+    <Compile Include="MyScripts\LibroDeRegistro\LibroDeRegistroWindow.xaml.cs">
+      <DependentUpon>LibroDeRegistroWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="MyScripts\ShowMessageOrError.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">

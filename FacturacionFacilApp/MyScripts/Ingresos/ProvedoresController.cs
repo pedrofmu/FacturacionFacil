@@ -20,7 +20,7 @@ namespace FacturacionFacilApp.MyScripts.Ingresos
         public ProvedoresController(ComboBox _clients_dropdown)
         {
             provedores_dropdown = _clients_dropdown;
-            json_path = new Uri("Json/Provedores.json", UriKind.Relative);
+            json_path = ControladorURI.ProvedoresJson;
 
             GetProvedoresFromFile();
 

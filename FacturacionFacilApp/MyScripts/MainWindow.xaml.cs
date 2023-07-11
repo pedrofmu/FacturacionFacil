@@ -1,4 +1,5 @@
 ﻿using FacturacionFacilApp.MyScripts.Ingresos;
+using FacturacionFacilApp.MyScripts.MostarCuentas;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -19,9 +20,8 @@ namespace FacturacionFacilApp
 {
     public partial class MainWindow : Window
     {
-        private Button ingresos_btn;
-
         private FacturaWindow factura_window;
+        private LibroDeRegistroWindow mostrar_cuentas_window;
 
         //El inicializador de la clase MainWindow
         public MainWindow()
@@ -30,8 +30,8 @@ namespace FacturacionFacilApp
              
             try 
             {
-                ingresos_btn = FindName("ingresos_btn_") as Button;
-                ingresos_btn.Click += OnIngresosIsClicked;
+                ingresos_btn_.Click += AbrirCrearIngreso;
+                ver_cuentas_btn_.Click += AbirirVerCuentas;
             }
             catch
             {
@@ -41,7 +41,7 @@ namespace FacturacionFacilApp
         }
 
         //Esta función es llamada cuando ingresos_btn es llamado y se encarga de cambiar de escena
-        public void OnIngresosIsClicked(object sender, RoutedEventArgs e)
+        public void AbrirCrearIngreso(object sender, RoutedEventArgs e)
         {
             if (factura_window is null)
             {
@@ -50,6 +50,18 @@ namespace FacturacionFacilApp
 
             this.Close();
             factura_window.Show();
+        }
+
+        //Esta funcion es llamada para cambair a la pantalla de ver ingresos
+        public void AbirirVerCuentas(object sender, RoutedEventArgs e)
+        {
+            if (mostrar_cuentas_window is null)
+            {
+                mostrar_cuentas_window = new LibroDeRegistroWindow();
+            }
+
+            this.Close();
+            mostrar_cuentas_window.Show();
         }
     }
 }

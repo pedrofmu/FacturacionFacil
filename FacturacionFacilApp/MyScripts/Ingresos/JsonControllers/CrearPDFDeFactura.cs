@@ -67,7 +67,7 @@ namespace FacturacionFacilApp.MyScripts.Ingresos.JsonControllers
 
                 // Agrega la tabla de unidades compradas
                 Table table = new Table(5).UseAllAvailableWidth();
-                table.AddHeaderCell("Cantidad").AddHeaderCell("Unidad").AddHeaderCell("Precio").AddHeaderCell("IVA").AddHeaderCell("Total");
+                table.AddHeaderCell("Cantidad").AddHeaderCell("Unidad").AddHeaderCell("Precio").AddHeaderCell("IVA").AddHeaderCell("Total (con IVA)");
 
                 foreach (var unidad in _factura.UnidadesCompradas)
                 {
@@ -82,7 +82,9 @@ namespace FacturacionFacilApp.MyScripts.Ingresos.JsonControllers
 
                 // Agrega el total base imponible y el restado por IRPF
                 document.Add(new Paragraph("Total Base Imponible: " + _factura.TotalBaseImponible + "€").SetMarginTop(10));
-                document.Add(new Paragraph("Restado por IRPF: " + _factura.RestadoPorIRPF + "%"));
+                document.Add(new Paragraph("IRPF: " + _factura.IRPF + "%"));
+                document.Add(new Paragraph("Añadido Por IVA: " + _factura.AñadidoPorIVA + "€"));
+                document.Add(new Paragraph("Importe total final: " + _factura.ImporteTotalFinal + "€"));
 
                 // Agrega las condiciones y forma de pago
                 document.Add(new Paragraph("\nCondiciones de pago: " + "\n" + _factura.CondicionesFormaDePago).SetMarginBottom(10));

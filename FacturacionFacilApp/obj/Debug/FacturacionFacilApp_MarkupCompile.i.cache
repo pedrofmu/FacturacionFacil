@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\pedro\Escritorio\Importante\Yolanda\ContabilidadSolution\FacturacionFacilApp\App.xaml
-7105928800
+6-549734106
 
-25-859796910
+262018041691
 42-391133676
-MyScripts\Ingresos\AddNewClientWindow.xaml;MyScripts\Ingresos\AddNewProvedorWindow.xaml;MyScripts\Ingresos\FacturaWindow.xaml;MyScripts\MainWindow.xaml;MyScripts\MessagesWindows\ErrorWindow.xaml;MyScripts\MessagesWindows\PopUpWindow.xaml;MyScripts\MostarCuentas\MostrarIngresos.xaml;
+MyScripts\Ingresos\AddNewClientWindow.xaml;MyScripts\Ingresos\AddNewProvedorWindow.xaml;MyScripts\Ingresos\FacturaWindow.xaml;MyScripts\MainWindow.xaml;MyScripts\MessagesWindows\ErrorWindow.xaml;MyScripts\LibroDeRegistro\LibroDeRegistroWindow.xaml;
 
-True
+False
 

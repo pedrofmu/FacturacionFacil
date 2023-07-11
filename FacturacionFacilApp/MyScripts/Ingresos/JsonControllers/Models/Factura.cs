@@ -16,7 +16,9 @@ namespace FacturacionFacilApp.MyScripts.Ingresos.JsonModels
         public string Fecha { get; set; }
         public UnidadComprada[] UnidadesCompradas { get; set; }
         public float TotalBaseImponible { get; set; } //Total base imponible UnidadesTotalesSumadas
-        public string RestadoPorIRPF { get; set; }
+        public string IRPF { get; set; }
+        public float AñadidoPorIVA { get; set; }
+        public float ImporteTotalFinal { get ; set; }
         public string CondicionesFormaDePago { get; set; }
     }
 }

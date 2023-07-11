@@ -22,16 +22,22 @@ namespace FacturacionFacilApp.MyScripts.Ingresos.JsonControllers
         //Obtine los valores para la factura y los crea
         public void CrearFactura(string _letra_factura, Proveedor _provedor, Cliente _cliente, string _fecha, List<UnidadComprada> _unidades_compradas, string _irpf, string _condiciones_forma_pago)
         {
-            float irpf = 0f;
-            if (!float.TryParse(_irpf, out irpf))
-            {
-                irpf = 0;
-            }
-
             List<Factura> factura_list = FacturasJsonController.GetFacturasFromJson(json_path.ToString());
 
-            float dinero_total = ConseguirPrecioTotal(_unidades_compradas, irpf);
+            float dinero_total = ConseguirPrecioTotal(_unidades_compradas);
             string numero = HacerNumeroDeFactura(_letra_factura, factura_list);
+
+            float añadido_por_iva = ObtenerAñadidoPorIVA(_unidades_compradas);
+
+            float porcentaje_irpf = 0;
+            if (!float.TryParse(_irpf, out porcentaje_irpf))
+            {
+                porcentaje_irpf = 1;
+            }
+            else
+            {
+                porcentaje_irpf = porcentaje_irpf / 100;
+            }
 
             Factura factura = new Factura
             {
@@ -41,7 +47,9 @@ namespace FacturacionFacilApp.MyScripts.Ingresos.JsonControllers
                 Fecha = _fecha,
                 UnidadesCompradas = _unidades_compradas.ToArray(),
                 TotalBaseImponible = dinero_total,
-                RestadoPorIRPF = _irpf,
+                IRPF = _irpf,
+                AñadidoPorIVA = añadido_por_iva,
+                ImporteTotalFinal = dinero_total + añadido_por_iva - (dinero_total * porcentaje_irpf),
                 CondicionesFormaDePago = _condiciones_forma_pago
             };
 
@@ -73,7 +81,7 @@ namespace FacturacionFacilApp.MyScripts.Ingresos.JsonControllers
         }
 
         //Calcula el precio total de la factura
-        float ConseguirPrecioTotal(List<UnidadComprada> _unidades_compradas, float IRPF)
+        float ConseguirPrecioTotal(List<UnidadComprada> _unidades_compradas)
         {
             float precio_total = 0;
 
@@ -82,10 +90,22 @@ namespace FacturacionFacilApp.MyScripts.Ingresos.JsonControllers
 
             foreach (UnidadComprada unidad in _unidades_compradas)
             {
-                precio_total += unidad.PrecioConIVA;
+                precio_total += unidad.PrecioPorUnidad * unidad.UnidadesDelProducto;
             }
 
-            return precio_total - (precio_total * IRPF / 100);
+            return precio_total;
+        }
+
+        float ObtenerAñadidoPorIVA(List<UnidadComprada> _unidades_compradas)
+        {
+            float añadido_por_iva = 0;
+
+            foreach (UnidadComprada unidad in _unidades_compradas)
+            {
+                añadido_por_iva += unidad.AñadidoPorIVA;
+            }
+
+            return añadido_por_iva;
         }
     }
 }

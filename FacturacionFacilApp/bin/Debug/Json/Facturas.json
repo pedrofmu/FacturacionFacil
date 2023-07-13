@@ -1,0 +1,442 @@
+[
+  {
+    "Numero": "a1",
+    "Cliente": {
+      "Nombre": "Vida Sana",
+      "Identificador": "T67",
+      "Direccion": "Vida sana city",
+      "Contacto": "vidasana@mail.com"
+    },
+    "Proveedor": {
+      "Nombre": "Yolanda",
+      "Identificador": "G65",
+      "Direccion": "Mi casa",
+      "Contacto": "yoli@gmail.com"
+    },
+    "Fecha": "2023-07-08",
+    "UnidadesCompradas": [
+      {
+        "UnidadesDelProducto": 1,
+        "TipoDeUnidad": "Cinta de beacon",
+        "PrecioPorUnidad": 19.0,
+        "IVA": 10.0,
+        "AñadidoPorIVA": 1.89999962,
+        "PrecioConIVA": 20.9
+      }
+    ],
+    "TotalBaseImponible": 19.0,
+    "IRPF": "Ninguno",
+    "AñadidoPorIVA": 1.89999962,
+    "ImporteTotalFinal": 20.9,
+    "CondicionesFormaDePago": "Pago en efectivo, entregado 5 y devuelto 2.9",
+    "Actividad": "Formacion"
+  },
+  {
+    "Numero": "a2",
+    "Cliente": {
+      "Nombre": "Vida Sana",
+      "Identificador": "T67",
+      "Direccion": "Vida sana city",
+      "Contacto": "vidasana@mail.com"
+    },
+    "Proveedor": {
+      "Nombre": "Yolanda",
+      "Identificador": "G65",
+      "Direccion": "Mi casa",
+      "Contacto": "yoli@gmail.com"
+    },
+    "Fecha": "2023-07-13",
+    "UnidadesCompradas": [
+      {
+        "UnidadesDelProducto": 3,
+        "TipoDeUnidad": "Arroz",
+        "PrecioPorUnidad": 10.0,
+        "IVA": 10.0,
+        "AñadidoPorIVA": 3.0,
+        "PrecioConIVA": 33.0
+      },
+      {
+        "UnidadesDelProducto": 5,
+        "TipoDeUnidad": "Alcachofas",
+        "PrecioPorUnidad": 15.0,
+        "IVA": 21.0,
+        "AñadidoPorIVA": 15.75,
+        "PrecioConIVA": 90.75
+      }
+    ],
+    "TotalBaseImponible": 105.0,
+    "IRPF": "7",
+    "AñadidoPorIVA": 18.75,
+    "ImporteTotalFinal": 116.4,
+    "CondicionesFormaDePago": "Transferencia bancaria, a E89676785, antes del 2023-07-20",
+    "Actividad": "Formacion"
+  },
+  {
+    "Numero": "a3",
+    "Cliente": {
+      "Nombre": "Vida Sana",
+      "Identificador": "T67",
+      "Direccion": "Vida sana city",
+      "Contacto": "vidasana@mail.com"
+    },
+    "Proveedor": {
+      "Nombre": "Yolanda",
+      "Identificador": "G65",
+      "Direccion": "Mi casa",
+      "Contacto": "yoli@gmail.com"
+    },
+    "Fecha": "2023-06-29",
+    "UnidadesCompradas": [
+      {
+        "UnidadesDelProducto": 2,
+        "TipoDeUnidad": "Zapatos deportivos",
+        "PrecioPorUnidad": 50.0,
+        "IVA": 10.0,
+        "AñadidoPorIVA": 10.0,
+        "PrecioConIVA": 110.0
+      }
+    ],
+    "TotalBaseImponible": 100.0,
+    "IRPF": "Ninguno",
+    "AñadidoPorIVA": 10.0,
+    "ImporteTotalFinal": 110.0,
+    "CondicionesFormaDePago": "Pago con tarjeta de crédito al recibir",
+    "Actividad": "Venta de calzado"
+  },
+  {
+    "Numero": "a4",
+    "Cliente": {
+      "Nombre": "Vida Sana",
+      "Identificador": "T67",
+      "Direccion": "Vida sana city",
+      "Contacto": "vidasana@mail.com"
+    },
+    "Proveedor": {
+      "Nombre": "Yolanda",
+      "Identificador": "G65",
+      "Direccion": "Mi casa",
+      "Contacto": "yoli@gmail.com"
+    },
+    "Fecha": "2023-05-15",
+    "UnidadesCompradas": [
+      {
+        "UnidadesDelProducto": 2,
+        "TipoDeUnidad": "Camisetas",
+        "PrecioPorUnidad": 15.0,
+        "IVA": 21.0,
+        "AñadidoPorIVA": 6.3,
+        "PrecioConIVA": 36.3
+      },
+      {
+        "UnidadesDelProducto": 3,
+        "TipoDeUnidad": "Pantalones",
+        "PrecioPorUnidad": 30.0,
+        "IVA": 21.0,
+        "AñadidoPorIVA": 18.9,
+        "PrecioConIVA": 108.9
+      }
+    ],
+    "TotalBaseImponible": 135.0,
+    "IRPF": "7",
+    "AñadidoPorIVA": 25.2,
+    "ImporteTotalFinal": 155.4,
+    "CondicionesFormaDePago": "Pago mediante transferencia bancaria",
+    "Actividad": "Venta de ropa"
+  },
+  {
+    "Numero": "a5",
+    "Cliente": {
+      "Nombre": "Vida Sana",
+      "Identificador": "T67",
+      "Direccion": "Vida sana city",
+      "Contacto": "vidasana@mail.com"
+    },
+    "Proveedor": {
+      "Nombre": "Yolanda",
+      "Identificador": "G65",
+      "Direccion": "Mi casa",
+      "Contacto": "yoli@gmail.com"
+    },
+    "Fecha": "2023-03-02",
+    "UnidadesCompradas": [
+      {
+        "UnidadesDelProducto": 1,
+        "TipoDeUnidad": "Monitor",
+        "PrecioPorUnidad": 200.0,
+        "IVA": 10.0,
+        "AñadidoPorIVA": 20.0,
+        "PrecioConIVA": 220.0
+      },
+      {
+        "UnidadesDelProducto": 1,
+        "TipoDeUnidad": "Teclado",
+        "PrecioPorUnidad": 50.0,
+        "IVA": 21.0,
+        "AñadidoPorIVA": 10.5,
+        "PrecioConIVA": 60.5
+      },
+      {
+        "UnidadesDelProducto": 1,
+        "TipoDeUnidad": "Ratón",
+        "PrecioPorUnidad": 20.0,
+        "IVA": 21.0,
+        "AñadidoPorIVA": 4.2,
+        "PrecioConIVA": 24.2
+      }
+    ],
+    "TotalBaseImponible": 270.0,
+    "IRPF": "Ninguno",
+    "AñadidoPorIVA": 34.7,
+    "ImporteTotalFinal": 304.7,
+    "CondicionesFormaDePago": "Pago con tarjeta de débito al recibir el pedido",
+    "Actividad": "Venta de productos informáticos"
+  },
+  {
+    "Numero": "a6",
+    "Cliente": {
+      "Nombre": "Vida Sana",
+      "Identificador": "T67",
+      "Direccion": "Vida sana city",
+      "Contacto": "vidasana@mail.com"
+    },
+    "Proveedor": {
+      "Nombre": "Yolanda",
+      "Identificador": "G65",
+      "Direccion": "Mi casa",
+      "Contacto": "yoli@gmail.com"
+    },
+    "Fecha": "2023-01-10",
+    "UnidadesCompradas": [
+      {
+        "UnidadesDelProducto": 2,
+        "TipoDeUnidad": "Libro",
+        "PrecioPorUnidad": 12.0,
+        "IVA": 4.0,
+        "AñadidoPorIVA": 0.96,
+        "PrecioConIVA": 24.96
+      },
+      {
+        "UnidadesDelProducto": 1,
+        "TipoDeUnidad": "Revista",
+        "PrecioPorUnidad": 5.0,
+        "IVA": 4.0,
+        "AñadidoPorIVA": 0.2,
+        "PrecioConIVA": 5.2
+      },
+      {
+        "UnidadesDelProducto": 1,
+        "TipoDeUnidad": "Periódico",
+        "PrecioPorUnidad": 2.0,
+        "IVA": 10.0,
+        "AñadidoPorIVA": 0.2,
+        "PrecioConIVA": 2.2
+      }
+    ],
+    "TotalBaseImponible": 19.0,
+    "IRPF": "Ninguno",
+    "AñadidoPorIVA": 1.36,
+    "ImporteTotalFinal": 20.36,
+    "CondicionesFormaDePago": "Pago en efectivo al momento de la entrega",
+    "Actividad": "Venta de medios impresos"
+  },
+  {
+    "Numero": "a7",
+    "Cliente": {
+      "Nombre": "Vida Sana",
+      "Identificador": "T67",
+      "Direccion": "Vida sana city",
+      "Contacto": "vidasana@mail.com"
+    },
+    "Proveedor": {
+      "Nombre": "Yolanda",
+      "Identificador": "G65",
+      "Direccion": "Mi casa",
+      "Contacto": "yoli@gmail.com"
+    },
+    "Fecha": "2022-11-19",
+    "UnidadesCompradas": [
+      {
+        "UnidadesDelProducto": 1,
+        "TipoDeUnidad": "Mochila",
+        "PrecioPorUnidad": 30.0,
+        "IVA": 10.0,
+        "AñadidoPorIVA": 3.0,
+        "PrecioConIVA": 33.0
+      },
+      {
+        "UnidadesDelProducto": 4,
+        "TipoDeUnidad": "Cuadernos",
+        "PrecioPorUnidad": 5.0,
+        "IVA": 21.0,
+        "AñadidoPorIVA": 4.2,
+        "PrecioConIVA": 24.2
+      }
+    ],
+    "TotalBaseImponible": 35.0,
+    "IRPF": "Ninguno",
+    "AñadidoPorIVA": 7.2,
+    "ImporteTotalFinal": 42.2,
+    "CondicionesFormaDePago": "Pago con tarjeta de crédito en línea",
+    "Actividad": "Venta de artículos de papelería"
+  },
+  {
+    "Numero": "a8",
+    "Cliente": {
+      "Nombre": "Vida Sana",
+      "Identificador": "T67",
+      "Direccion": "Vida sana city",
+      "Contacto": "vidasana@mail.com"
+    },
+    "Proveedor": {
+      "Nombre": "Yolanda",
+      "Identificador": "G65",
+      "Direccion": "Mi casa",
+      "Contacto": "yoli@gmail.com"
+    },
+    "Fecha": "2022-09-05",
+    "UnidadesCompradas": [
+      {
+        "UnidadesDelProducto": 2,
+        "TipoDeUnidad": "Plantas",
+        "PrecioPorUnidad": 10.0,
+        "IVA": 10.0,
+        "AñadidoPorIVA": 2.0,
+        "PrecioConIVA": 22.0
+      },
+      {
+        "UnidadesDelProducto": 5,
+        "TipoDeUnidad": "Macetas",
+        "PrecioPorUnidad": 5.0,
+        "IVA": 21.0,
+        "AñadidoPorIVA": 5.25,
+        "PrecioConIVA": 30.25
+      }
+    ],
+    "TotalBaseImponible": 35.0,
+    "IRPF": "7",
+    "AñadidoPorIVA": 7.25,
+    "ImporteTotalFinal": 42.25,
+    "CondicionesFormaDePago": "Pago en efectivo al recibir los productos",
+    "Actividad": "Venta de artículos de jardinería"
+  },
+  {
+    "Numero": "a9",
+    "Cliente": {
+      "Nombre": "Vida Sana",
+      "Identificador": "T67",
+      "Direccion": "Vida sana city",
+      "Contacto": "vidasana@mail.com"
+    },
+    "Proveedor": {
+      "Nombre": "Yolanda",
+      "Identificador": "G65",
+      "Direccion": "Mi casa",
+      "Contacto": "yoli@gmail.com"
+    },
+    "Fecha": "2022-06-20",
+    "UnidadesCompradas": [
+      {
+        "UnidadesDelProducto": 2,
+        "TipoDeUnidad": "Bolsas de té",
+        "PrecioPorUnidad": 8.0,
+        "IVA": 10.0,
+        "AñadidoPorIVA": 1.6,
+        "PrecioConIVA": 17.6
+      },
+      {
+        "UnidadesDelProducto": 3,
+        "TipoDeUnidad": "Infusiones",
+        "PrecioPorUnidad": 12.0,
+        "IVA": 21.0,
+        "AñadidoPorIVA": 7.56,
+        "PrecioConIVA": 43.56
+      }
+    ],
+    "TotalBaseImponible": 60.0,
+    "IRPF": "Ninguno",
+    "AñadidoPorIVA": 9.16,
+    "ImporteTotalFinal": 69.16,
+    "CondicionesFormaDePago": "Pago mediante transferencia bancaria",
+    "Actividad": "Venta de productos naturales"
+  },
+  {
+    "Numero": "a10",
+    "Cliente": {
+      "Nombre": "Vida Sana",
+      "Identificador": "T67",
+      "Direccion": "Vida sana city",
+      "Contacto": "vidasana@mail.com"
+    },
+    "Proveedor": {
+      "Nombre": "Yolanda",
+      "Identificador": "G65",
+      "Direccion": "Mi casa",
+      "Contacto": "yoli@gmail.com"
+    },
+    "Fecha": "2022-03-15",
+    "UnidadesCompradas": [
+      {
+        "UnidadesDelProducto": 1,
+        "TipoDeUnidad": "Aceite de oliva",
+        "PrecioPorUnidad": 10.0,
+        "IVA": 10.0,
+        "AñadidoPorIVA": 1.0,
+        "PrecioConIVA": 11.0
+      },
+      {
+        "UnidadesDelProducto": 2,
+        "TipoDeUnidad": "Vinagre balsámico",
+        "PrecioPorUnidad": 5.0,
+        "IVA": 10.0,
+        "AñadidoPorIVA": 1.0,
+        "PrecioConIVA": 11.0
+      },
+      {
+        "UnidadesDelProducto": 1,
+        "TipoDeUnidad": "Sal marina",
+        "PrecioPorUnidad": 2.0,
+        "IVA": 21.0,
+        "AñadidoPorIVA": 0.42,
+        "PrecioConIVA": 2.42
+      }
+    ],
+    "TotalBaseImponible": 17.0,
+    "IRPF": "7",
+    "AñadidoPorIVA": 2.42,
+    "ImporteTotalFinal": 19.42,
+    "CondicionesFormaDePago": "Pago con tarjeta de débito al recibir el pedido",
+    "Actividad": "Venta de productos gourmet"
+  },
+  {
+    "Numero": "a11",
+    "Cliente": {
+      "Nombre": "Vida Sana",
+      "Identificador": "T67",
+      "Direccion": "Vida sana city",
+      "Contacto": "vidasana@mail.com"
+    },
+    "Proveedor": {
+      "Nombre": "Yolanda",
+      "Identificador": "G65",
+      "Direccion": "Mi casa",
+      "Contacto": "yoli@gmail.com"
+    },
+    "Fecha": "2023-07-13",
+    "UnidadesCompradas": [
+      {
+        "UnidadesDelProducto": 3,
+        "TipoDeUnidad": "Rabanos",
+        "PrecioPorUnidad": 15.0,
+        "IVA": 7.0,
+        "AñadidoPorIVA": 3.15000153,
+        "PrecioConIVA": 48.15
+      }
+    ],
+    "TotalBaseImponible": 45.0,
+    "IRPF": "7",
+    "AñadidoPorIVA": 3.15000153,
+    "ImporteTotalFinal": 45.0,
+    "CondicionesFormaDePago": "fasdfasdf",
+    "Actividad": "Formacion"
+  }
+]

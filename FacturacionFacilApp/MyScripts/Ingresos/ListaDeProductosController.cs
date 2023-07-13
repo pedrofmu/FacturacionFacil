@@ -2,6 +2,7 @@
 using FacturacionFacilApp.MyScripts.Ingresos.JsonModels;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -159,11 +160,12 @@ namespace FacturacionFacilApp.MyScripts
         }
 
         //Funcion que se encarga de crear las unidades
-        UnidadComprada CrearUnidad(string _cantiadad_uniades, string _tipo_unidad, string _precio_uniada, string _IVA)
+        UnidadComprada CrearUnidad(string _cantiadad_uniades, string _tipo_unidad, string _precio_unidad, string _IVA)
         {
-            float precio_total = float.Parse(_cantiadad_uniades) * float.Parse(_precio_uniada) + (float.Parse(_cantiadad_uniades) * float.Parse(_precio_uniada) * (float.Parse(_IVA) / 100));
+            float precio_unidad_parsed = float.Parse(_precio_unidad.Replace(",", "."), NumberStyles.Float, CultureInfo.InvariantCulture);
+            float precio_total = float.Parse(_cantiadad_uniades) * precio_unidad_parsed + (float.Parse(_cantiadad_uniades) * precio_unidad_parsed * (float.Parse(_IVA) / 100));
 
-            float precio_sin_IVA = float.Parse(_cantiadad_uniades) * float.Parse(_precio_uniada);
+            float precio_sin_IVA = float.Parse(_cantiadad_uniades) * precio_unidad_parsed;
 
             float precio_añadido = precio_total - precio_sin_IVA;
 
@@ -171,7 +173,7 @@ namespace FacturacionFacilApp.MyScripts
             {
                 UnidadesDelProducto = int.Parse(_cantiadad_uniades),
                 TipoDeUnidad = _tipo_unidad,
-                PrecioPorUnidad = int.Parse(_precio_uniada),
+                PrecioPorUnidad = precio_unidad_parsed,
                 IVA = int.Parse(_IVA),
                 AñadidoPorIVA = precio_añadido,
                 PrecioConIVA = precio_total

@@ -233,5 +233,8 @@
   <ItemGroup>
     <Resource Include="MyScripts\MessagesWindows\warning-error.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="MyScripts\Ingresos\flecha-izquierda.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -20,7 +20,7 @@ namespace FacturacionFacilApp.MyScripts.Ingresos.JsonControllers
         }
 
         //Obtine los valores para la factura y los crea
-        public void CrearFactura(string _letra_factura, Proveedor _provedor, Cliente _cliente, string _fecha, List<UnidadComprada> _unidades_compradas, string _irpf, string _condiciones_forma_pago)
+        public void CrearFactura(string _letra_factura, Proveedor _provedor, Cliente _cliente, string _fecha, List<UnidadComprada> _unidades_compradas, string _irpf, string _condiciones_forma_pago, string _actividad)
         {
             List<Factura> factura_list = FacturasJsonController.GetFacturasFromJson(json_path.ToString());
 
@@ -50,7 +50,8 @@ namespace FacturacionFacilApp.MyScripts.Ingresos.JsonControllers
                 IRPF = _irpf,
                 AñadidoPorIVA = añadido_por_iva,
                 ImporteTotalFinal = dinero_total + añadido_por_iva - (dinero_total * porcentaje_irpf),
-                CondicionesFormaDePago = _condiciones_forma_pago
+                CondicionesFormaDePago = _condiciones_forma_pago,
+                Actividad = _actividad
             };
 
             if (CrearPDFDeFactura.CrearPDF(factura))

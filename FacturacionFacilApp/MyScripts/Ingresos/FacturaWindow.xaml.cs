@@ -33,8 +33,9 @@ namespace FacturacionFacilApp.MyScripts.Ingresos
             InitializeComponent();
 
             // Llamada a los métodos para refrescar los ComboBox
-            RefreshComboBox();
+            RefreshLetraComboBox();
             RefreshIRPFComboBox();
+            RefreshActividadesComboBox();
 
             // Creación de instancias de controladores
             lista_de_productos_controller = new ListaDeProductosController(main_grid_, 277);
@@ -52,7 +53,7 @@ namespace FacturacionFacilApp.MyScripts.Ingresos
         }
 
         // Método para refrescar el ComboBox para seleccionar una letra
-        private void RefreshComboBox()
+        private void RefreshLetraComboBox()
         {
             char[] letras = "abcdefghijklmnopqrstuvwxyz".ToCharArray();
 
@@ -75,6 +76,17 @@ namespace FacturacionFacilApp.MyScripts.Ingresos
                 {
                     irpf_dropdown_.Items.Add(tramo.ToString());
                 }
+            }
+        }
+
+        // Método para refrescar el ComboBox para seleccionar una actividad
+        private void RefreshActividadesComboBox()
+        {
+            string[] actividades = { "Formacion", "Ventas", "Servicios" };
+
+            foreach (string act in actividades)
+            {
+                actividad_dropdown_.Items.Add(act);
             }
         }
 
@@ -134,13 +146,13 @@ namespace FacturacionFacilApp.MyScripts.Ingresos
 
             string datos_del_pago = datos_del_pago_textbox_.Text;
 
-            if(datos_del_pago == "Introduzca aquí los datos de pago")
+            if (datos_del_pago == "Introduzca aquí los datos de pago")
             {
                 ShowMessageOrError.ShowError("Introduzca una forma y condición del pago");
                 return;
             }
 
-            factura_controller.CrearFactura(letra_selecionada, provedor, cliente, fecha, unidades_compradas, irpf_dropdown_.Text, datos_del_pago);
+            factura_controller.CrearFactura(letra_selecionada, provedor, cliente, fecha, unidades_compradas, irpf_dropdown_.Text, datos_del_pago, actividad_dropdown_.Text);
         }
 
         // Método para comprobar si una fecha es válida
@@ -190,6 +202,15 @@ namespace FacturacionFacilApp.MyScripts.Ingresos
         {
             AddNewProvedorWindow new_provedor_window = new AddNewProvedorWindow();
             new_provedor_window.Show();
+        }
+
+        // Método para manejar el evento de hacer clic en "Atras"
+        private void AtrasBTN(object sender, RoutedEventArgs e)
+        {
+            MainWindow main_window = new MainWindow();
+            main_window.Show();
+
+            this.Close();
         }
     }
 }

@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FacturacionFacilApp.MyScripts.Ingresos"
         mc:Ignorable="d"
-        Title="FacturaWindow" Height="700" Width="500">
+        Title="FacturaWindow" Height="720" Width="510">
     <Grid Name="main_grid_">
         <ComboBox x:Name="provedores_dropdown_" HorizontalAlignment="Left" Margin="55,33,0,0" VerticalAlignment="Top" Width="120" />
         <Label x:Name="provedores_txt_" Content="Provedor" HorizontalAlignment="Left" Margin="55,8,0,0" VerticalAlignment="Top" Width="120" Height="25"/>
@@ -25,6 +25,8 @@
         <Button Name="guardad_factura_btn_" Content="Guardad" HorizontalAlignment="Left" Margin="55,571,0,0" VerticalAlignment="Top" Width="120" Click="GuardarFacturaBTN"/>
         <Label x:Name="datos_pago_txt_" Content="Condiciones y forma de pago" HorizontalAlignment="Left" Margin="250,489,0,0" VerticalAlignment="Top" Width="174"/>
         <TextBox Name="datos_del_pago_textbox_" HorizontalAlignment="Left" Margin="250,515,0,0" TextWrapping="Wrap" Text="Introduzca aquí los datos de pago" VerticalAlignment="Top" Width="217" Height="48"/>
-
+        <Button Content="Atras" HorizontalAlignment="Left" Margin="55,641,0,0" VerticalAlignment="Top" Width="120" Click="AtrasBTN"/>
+        <ComboBox x:Name="actividad_dropdown_" HorizontalAlignment="Left" Margin="250,604,0,0" VerticalAlignment="Top" Width="120" />
+        <Label x:Name="actividad_txt_" Content="Actividad" HorizontalAlignment="Left" Margin="250,579,0,0" VerticalAlignment="Top" Width="120" Height="25"/>
     </Grid>
 </Window>

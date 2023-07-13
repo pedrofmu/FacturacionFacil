@@ -20,23 +20,59 @@ namespace FacturacionFacilApp.MyScripts.LibroDeRegistro
                 LibroDeRegistroPlaceHolder placeholder =  new LibroDeRegistroPlaceHolder {
                      Numero = factura.Numero,
                      Fecha = factura.Fecha,
-                     ClienteName = factura.Cliente.Contacto,
+                     NombreCliente = factura.Cliente.Nombre,
                      ProductosOfrecidos = ObtenerProductos(factura),
-                     BaseImponible = ObtenerBaseImponible(factura),
-                     IVA = ObtenerTodosLosIVAs(factura),
-                     AñadidoPorIVA = ObtenerAñadidoPorIVA(factura),
-                     RetenidoPorIRPF = ObtenerRetenidoPorIRPF(factura)
+                     BaseImponible = $"{ObtenerBaseImponible(factura)}€",
+                     IVA = $"{ObtenerTodosLosIVAs(factura)}",
+                     AñadidoPorIVA = $"{ObtenerAñadidoPorIVA(factura)}€",
+                     RetenidoPorIRPF = $"{ObtenerRetenidoPorIRPF(factura)}€",
+                     Total = $"{(ObtenerBaseImponible(factura) + ObtenerAñadidoPorIVA(factura) - ObtenerRetenidoPorIRPF(factura))}€",
+                     Actividad = factura.Actividad
                 };
+
+                data_a_mostrar.Add(placeholder);
             }
 
             return data_a_mostrar.ToArray();
+        }
+
+        public static LibroDeRegistroPlaceHolder[] ObtenerDataOrdenadaPorIVA(string _IVA)
+        {
+            LibroDeRegistroPlaceHolder[] temp_place_holders = ObtenerData();
+
+            if (_IVA == string.Empty) return temp_place_holders;
+
+            List<LibroDeRegistroPlaceHolder> return_data = new List<LibroDeRegistroPlaceHolder>();
+
+            foreach (LibroDeRegistroPlaceHolder data in temp_place_holders)
+            {
+                if (data.IVA.Contains(_IVA))
+                {
+                    return_data.Add(data);
+                }
+            }
+
+            if (return_data.Count == 0) return temp_place_holders;
+
+            return return_data.ToArray();
         }
 
         private static float ObtenerRetenidoPorIRPF(Factura _factura)
         {
             float total_base_imponible = ObtenerBaseImponible(_factura);
 
-            return 0;
+            float irpf = 0;
+            float retenido_irpf = 0;
+            if (float.TryParse(_factura.IRPF, out irpf))
+            {
+                retenido_irpf = (total_base_imponible * (irpf / 100));
+            }
+            else
+            {
+                retenido_irpf = 0;
+            }
+
+            return retenido_irpf;
         }
 
         private static float ObtenerAñadidoPorIVA(Factura _factura)
@@ -56,7 +92,7 @@ namespace FacturacionFacilApp.MyScripts.LibroDeRegistro
             string IVAs = "";
             foreach (UnidadComprada unidad_comprada in _factura.UnidadesCompradas)
             {
-                IVAs += $"\n{unidad_comprada.IVA}";
+                IVAs += $"{unidad_comprada.IVA}%\n";
             }
 
             return IVAs;
@@ -79,7 +115,7 @@ namespace FacturacionFacilApp.MyScripts.LibroDeRegistro
             string productos = "";
             foreach (UnidadComprada unidad_comprada in _factura.UnidadesCompradas)
             {
-                productos += $"\n{unidad_comprada.TipoDeUnidad}";
+                productos += $"{unidad_comprada.TipoDeUnidad}\n";
             }
 
             return productos;
@@ -90,24 +126,13 @@ namespace FacturacionFacilApp.MyScripts.LibroDeRegistro
     {
         public string Numero { get; set; }
         public string Fecha { get; set; }
-        public string ClienteName { get; set; }
+        public string NombreCliente { get; set; }
         public string ProductosOfrecidos { get; set; }  // separados por /n
-        public float BaseImponible { get; set; }   
+        public string BaseImponible { get; set; }   
         public string IVA { get; set; }
-        public float AñadidoPorIVA { get; set; }
-        public float Total { get; set; }
-        public float RetenidoPorIRPF { get; set; }
+        public string AñadidoPorIVA { get; set; }
+        public string RetenidoPorIRPF { get; set; }
+        public string Total { get; set; }
+        public string Actividad { get; set; }
     }
-
-    /* 
-   N factura
-   Fecha
-   Cliente
-   Productos Ofrecidos
-   Base Imponible (Suma de precio total de los productos)
-   IVA
-   Añadido por IVA
-   Total (Con IVA)
-   Retenido por IRPF
-*/
 }

@@ -67,7 +67,7 @@ namespace FacturacionFacilApp.MyScripts.Ingresos.JsonControllers
 
                 // Agrega la tabla de unidades compradas
                 Table table = new Table(5).UseAllAvailableWidth();
-                table.AddHeaderCell("Cantidad").AddHeaderCell("Unidad").AddHeaderCell("Precio").AddHeaderCell("IVA").AddHeaderCell("Total (con IVA)");
+                table.AddHeaderCell("Cantidad").AddHeaderCell("Unidad").AddHeaderCell("Precio unidad").AddHeaderCell("IVA").AddHeaderCell("Total (con IVA)");
 
                 foreach (var unidad in _factura.UnidadesCompradas)
                 {

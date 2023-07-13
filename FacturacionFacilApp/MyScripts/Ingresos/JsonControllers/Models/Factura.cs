@@ -20,5 +20,6 @@ namespace FacturacionFacilApp.MyScripts.Ingresos.JsonModels
         public float AñadidoPorIVA { get; set; }
         public float ImporteTotalFinal { get ; set; }
         public string CondicionesFormaDePago { get; set; }
+        public string Actividad { get; set; }
     }
 }

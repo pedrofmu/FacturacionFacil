@@ -8,6 +8,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("myscripts/messageswindows/warning-error.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("myscripts/ingresos/flecha-izquierda.png")]
 
 

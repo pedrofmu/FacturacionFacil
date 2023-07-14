@@ -4,5 +4,11 @@
     "Identificador": "T67",
     "Direccion": "Vida sana city",
     "Contacto": "vidasana@mail.com"
+  },
+  {
+    "Nombre": "Nintendo",
+    "Identificador": "E56",
+    "Direccion": "Nintendo INC",
+    "Contacto": "info@nintendo.inc"
   }
 ]

@@ -36,6 +36,22 @@ namespace FacturacionFacilApp.MyScripts.LibroDeRegistro
             return data_a_mostrar.ToArray();
         }
 
+        public static LibroDeRegistroPlaceHolder[] ObtenerDataOrdenadoPorCliente(string _nombre_cliente)
+        {
+            LibroDeRegistroPlaceHolder[] temp_place_holders = ObtenerData();
+
+            List<LibroDeRegistroPlaceHolder> return_data = new List<LibroDeRegistroPlaceHolder>();
+
+            foreach (LibroDeRegistroPlaceHolder libro in temp_place_holders)
+            {
+                if (libro.NombreCliente == _nombre_cliente)
+                {
+                    return_data.Add(libro);
+                }
+            }
+
+            return return_data.ToArray();
+        }
         public static LibroDeRegistroPlaceHolder[] ObtenerDataOrdenadaPorIVA(string _IVA)
         {
             LibroDeRegistroPlaceHolder[] temp_place_holders = ObtenerData();

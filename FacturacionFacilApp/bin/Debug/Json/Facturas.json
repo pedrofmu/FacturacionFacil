@@ -438,5 +438,45 @@
     "ImporteTotalFinal": 45.0,
     "CondicionesFormaDePago": "fasdfasdf",
     "Actividad": "Formacion"
+  },
+  {
+    "Numero": "a12",
+    "Cliente": {
+      "Nombre": "Nintendo",
+      "Identificador": "E56",
+      "Direccion": "Nintendo INC",
+      "Contacto": "info@nintendo.inc"
+    },
+    "Proveedor": {
+      "Nombre": "Yolanda",
+      "Identificador": "G65",
+      "Direccion": "Mi casa",
+      "Contacto": "yoli@gmail.com"
+    },
+    "Fecha": "2023-07-14",
+    "UnidadesCompradas": [
+      {
+        "UnidadesDelProducto": 3,
+        "TipoDeUnidad": "mario",
+        "PrecioPorUnidad": 60.0,
+        "IVA": 7.0,
+        "AñadidoPorIVA": 12.6000061,
+        "PrecioConIVA": 192.6
+      },
+      {
+        "UnidadesDelProducto": 5,
+        "TipoDeUnidad": "bayoneta",
+        "PrecioPorUnidad": 45.0,
+        "IVA": 21.0,
+        "AñadidoPorIVA": 47.25,
+        "PrecioConIVA": 272.25
+      }
+    ],
+    "TotalBaseImponible": 405.0,
+    "IRPF": "7",
+    "AñadidoPorIVA": 59.8500061,
+    "ImporteTotalFinal": 436.5,
+    "CondicionesFormaDePago": "En efectivo",
+    "Actividad": "Ventas"
   }
 ]

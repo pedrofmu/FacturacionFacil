@@ -23,13 +23,19 @@ namespace FacturacionFacilApp.MyScripts.MostarCuentas
         {
             InitializeComponent();
 
-            DataGridTextColumn column = new DataGridTextColumn();
-            column.Header = "Fecha";
-            column.Binding = new Binding("Fecha");
+            ActualizarComboBoxConIVAs();
+            ordenar_iva_combox_.SelectionChanged += (object o, SelectionChangedEventArgs e) => 
+            {
+                mostrar_data_.ItemsSource = ObtenerDataAMostrar.ObtenerDataOrdenadaPorIVA(ordenar_iva_combox_.SelectedItem.ToString()); 
+            };
 
-            mostrar_data_.Columns.Add(column);
+            ActualizarComboBoxConClientes();
+            ordenar_clientes_combox_.SelectionChanged += (object o, SelectionChangedEventArgs e) =>
+            {
+                mostrar_data_.ItemsSource = ObtenerDataAMostrar.ObtenerDataOrdenadoPorCliente(ordenar_clientes_combox_.SelectedItem.ToString());
+            };
 
-            mostrar_data_.ItemsSource = ObtenerDataAMostrar.ObtenerDataOrdenadaPorIVA("10");
+            mostrar_data_.ItemsSource = ObtenerDataAMostrar.ObtenerData();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -38,6 +44,47 @@ namespace FacturacionFacilApp.MyScripts.MostarCuentas
             main_windoww.Show();
 
             this.Close();
+        }
+
+        void ActualizarComboBoxConIVAs()
+        {
+            List<Factura> facturas = FacturasJsonController.GetFacturasFromJson(ControladorURI.FacturasJson.ToString());
+
+            List<float> final_ivas = new List<float>(); 
+            foreach (Factura factura in facturas)
+            {
+                foreach (UnidadComprada unidad_comprada in factura.UnidadesCompradas)
+                {
+                    if (!final_ivas.Contains(unidad_comprada.IVA))
+                    {
+                        final_ivas.Add(unidad_comprada.IVA);
+                    }
+                }
+            }
+
+            foreach(float f in final_ivas)
+            {
+                ordenar_iva_combox_.Items.Add($"{f}");
+            }
+        }
+
+        void ActualizarComboBoxConClientes()
+        {
+            List<Cliente> clientes = ClientesJsonController.DeserializeClients(ControladorURI.ClientesJson);
+
+            List<string> final_clientes = new List<string>();
+            foreach (Cliente cliente in clientes)
+            {
+                if (!final_clientes.Contains(cliente.Nombre))
+                {
+                    final_clientes.Add(cliente.Nombre);
+                }
+            }
+
+            foreach (string s in final_clientes)
+            {
+                ordenar_clientes_combox_.Items.Add($"{s}");
+            }
         }
     }
 }

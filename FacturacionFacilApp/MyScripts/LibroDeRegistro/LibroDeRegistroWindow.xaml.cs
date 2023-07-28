@@ -11,6 +11,7 @@ using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
+using System.Windows.Markup;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
@@ -26,16 +27,29 @@ namespace FacturacionFacilApp.MyScripts.MostarCuentas
             ActualizarComboBoxConIVAs();
             ordenar_iva_combox_.SelectionChanged += (object o, SelectionChangedEventArgs e) => 
             {
-                mostrar_data_.ItemsSource = ObtenerDataAMostrar.ObtenerDataOrdenadaPorIVA(ordenar_iva_combox_.SelectedItem.ToString()); 
+                LibroDeRegistroPlaceHolder[] data = ObtenerDataAMostrar.ObtenerDataOrdenada(ordenar_clientes_combox_.SelectedItem.ToString(), ordenar_actividad_combox_.SelectedItem.ToString(), ordenar_iva_combox_.SelectedItem.ToString());
+                mostrar_data_.ItemsSource = data;
+                total_bImponible_txt.Text = "Total base imponible (solo los producto del iva seleccionado): " + ObtenerDataAMostrar.ObtenerBaseImpoibleTotal(data, ordenar_iva_combox_.SelectedItem.ToString()) ;
             };
 
             ActualizarComboBoxConClientes();
             ordenar_clientes_combox_.SelectionChanged += (object o, SelectionChangedEventArgs e) =>
             {
-                mostrar_data_.ItemsSource = ObtenerDataAMostrar.ObtenerDataOrdenadoPorCliente(ordenar_clientes_combox_.SelectedItem.ToString());
+                LibroDeRegistroPlaceHolder[] data = ObtenerDataAMostrar.ObtenerDataOrdenada(ordenar_clientes_combox_.SelectedItem.ToString(), ordenar_actividad_combox_.SelectedItem.ToString(), ordenar_iva_combox_.SelectedItem.ToString());
+                mostrar_data_.ItemsSource = data;
+                total_bImponible_txt.Text = "Total base imponible (solo los producto del iva seleccionado): " + ObtenerDataAMostrar.ObtenerBaseImpoibleTotal(data, ordenar_iva_combox_.SelectedItem.ToString());
+            };
+
+            ActualizarComboxConActividades();
+            ordenar_actividad_combox_.SelectionChanged += (object o, SelectionChangedEventArgs e) =>
+            {
+                LibroDeRegistroPlaceHolder[] data = ObtenerDataAMostrar.ObtenerDataOrdenada(ordenar_clientes_combox_.SelectedItem.ToString(), ordenar_actividad_combox_.SelectedItem.ToString(), ordenar_iva_combox_.SelectedItem.ToString());
+                mostrar_data_.ItemsSource = data;
+                total_bImponible_txt.Text = "Total base imponible (solo los producto del iva seleccionado): " + ObtenerDataAMostrar.ObtenerBaseImpoibleTotal(data, ordenar_iva_combox_.SelectedItem.ToString());
             };
 
             mostrar_data_.ItemsSource = ObtenerDataAMostrar.ObtenerData();
+            total_bImponible_txt.Text = "Total base imponible (solo los producto del iva seleccionado): " + ObtenerDataAMostrar.ObtenerBaseImpoibleTotal(ObtenerDataAMostrar.ObtenerData(), ordenar_iva_combox_.Text) +"€";
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -66,6 +80,9 @@ namespace FacturacionFacilApp.MyScripts.MostarCuentas
             {
                 ordenar_iva_combox_.Items.Add($"{f}");
             }
+
+            ordenar_iva_combox_.Items.Add("-Ninguno-");
+            ordenar_iva_combox_.SelectedItem = ("-Ninguno-");
         }
 
         void ActualizarComboBoxConClientes()
@@ -85,6 +102,31 @@ namespace FacturacionFacilApp.MyScripts.MostarCuentas
             {
                 ordenar_clientes_combox_.Items.Add($"{s}");
             }
+
+            ordenar_clientes_combox_.Items.Add("-Ninguno-");
+            ordenar_clientes_combox_.SelectedItem = ("-Ninguno-");
+        }
+
+        void ActualizarComboxConActividades()
+        {
+            List<Factura> facturas = FacturasJsonController.GetFacturasFromJson(ControladorURI.FacturasJson.ToString());
+
+            List<string> actividades = new List<string>();
+            foreach (Factura factura in facturas)
+            {
+                if (!actividades.Contains(factura.Actividad))
+                {
+                    actividades.Add(factura.Actividad);
+                }
+            }
+
+            foreach (string s in actividades)
+            {
+                ordenar_actividad_combox_.Items.Add($"{s}");
+            }
+
+            ordenar_actividad_combox_.Items.Add("-Ninguno-");
+            ordenar_actividad_combox_.SelectedItem = ("-Ninguno-");
         }
     }
 }

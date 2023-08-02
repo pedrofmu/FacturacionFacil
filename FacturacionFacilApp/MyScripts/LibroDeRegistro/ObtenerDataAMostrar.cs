@@ -11,8 +11,9 @@ namespace FacturacionFacilApp.MyScripts.LibroDeRegistro
 {
     public class ObtenerDataAMostrar
     {
-        public static float ObtenerBaseImpoibleTotal(LibroDeRegistroPlaceHolder[] _data, string _IVA)
+        public static float ObtenerBaseImpoibleTotal(LibroDeRegistroPlaceHolder[] _data, string _IVA, out float _añadido_por_iva)
         {
+            _añadido_por_iva = 0;
             float total_bImopnible = 0;
 
             List<string> facturasID = new List<string>();
@@ -27,6 +28,11 @@ namespace FacturacionFacilApp.MyScripts.LibroDeRegistro
             foreach (UnidadComprada unidad in unidades_con_iva)
             {
                 total_bImopnible += unidad.UnidadesDelProducto * unidad.PrecioPorUnidad;
+            }
+
+            foreach (UnidadComprada unidad in unidades_con_iva)
+            {
+                _añadido_por_iva += unidad.AñadidoPorIVA;
             }
 
             return total_bImopnible;
@@ -73,9 +79,9 @@ namespace FacturacionFacilApp.MyScripts.LibroDeRegistro
                      ProductosOfrecidos = ObtenerProductos(factura),
                      BaseImponible = $"{ObtenerBaseImponible(factura)}",
                      IVA = $"{ObtenerTodosLosIVAs(factura)}",
-                     AñadidoPorIVA = $"{ObtenerAñadidoPorIVA(factura)}€",
+                     AñadidoPorIVA = $"{ObtenerAñadidoPorIVA(factura)}",
                      RetenidoPorIRPF = $"{ObtenerRetenidoPorIRPF(factura)}€",
-                     Total = $"{(factura.TotalBaseImponible + ObtenerAñadidoPorIVA(factura) - ObtenerRetenidoPorIRPF(factura))}€",
+                     Total = $"{(factura.TotalBaseImponible + factura.AñadidoPorIVA - ObtenerRetenidoPorIRPF(factura))}€",
                      Actividad = factura.Actividad
                 };
 
@@ -231,13 +237,13 @@ namespace FacturacionFacilApp.MyScripts.LibroDeRegistro
             return retenido_irpf;
         }
 
-        private static float ObtenerAñadidoPorIVA(Factura _factura)
+        private static string ObtenerAñadidoPorIVA(Factura _factura)
         {
-            float añadido_por_iva = 0;
+            string añadido_por_iva = "";
 
             foreach (UnidadComprada unidad_comprada in _factura.UnidadesCompradas)
             {
-                añadido_por_iva += unidad_comprada.AñadidoPorIVA;
+                añadido_por_iva += $"{unidad_comprada.AñadidoPorIVA}€\n";
             }
 
             return añadido_por_iva;

@@ -29,7 +29,9 @@ namespace FacturacionFacilApp.MyScripts.MostarCuentas
             {
                 LibroDeRegistroPlaceHolder[] data = ObtenerDataAMostrar.ObtenerDataOrdenada(ordenar_clientes_combox_.SelectedItem.ToString(), ordenar_actividad_combox_.SelectedItem.ToString(), ordenar_iva_combox_.SelectedItem.ToString());
                 mostrar_data_.ItemsSource = data;
-                total_bImponible_txt.Text = "Total base imponible (solo los producto del iva seleccionado): " + ObtenerDataAMostrar.ObtenerBaseImpoibleTotal(data, ordenar_iva_combox_.SelectedItem.ToString()) ;
+                float añadido_por_iva_ = 0;
+                total_bImponible_txt.Text = "Total base imponible (solo los producto del iva seleccionado): " + ObtenerDataAMostrar.ObtenerBaseImpoibleTotal(data, ordenar_iva_combox_.SelectedItem.ToString(), out añadido_por_iva_) + "€";
+                total_ivas_txt.Text = "Total añadido por IVA(excluyendo los no seleccionados): " + añadido_por_iva_ + "€";
             };
 
             ActualizarComboBoxConClientes();
@@ -37,7 +39,9 @@ namespace FacturacionFacilApp.MyScripts.MostarCuentas
             {
                 LibroDeRegistroPlaceHolder[] data = ObtenerDataAMostrar.ObtenerDataOrdenada(ordenar_clientes_combox_.SelectedItem.ToString(), ordenar_actividad_combox_.SelectedItem.ToString(), ordenar_iva_combox_.SelectedItem.ToString());
                 mostrar_data_.ItemsSource = data;
-                total_bImponible_txt.Text = "Total base imponible (solo los producto del iva seleccionado): " + ObtenerDataAMostrar.ObtenerBaseImpoibleTotal(data, ordenar_iva_combox_.SelectedItem.ToString());
+                float añadido_por_iva_ = 0;
+                total_bImponible_txt.Text = "Total base imponible (solo los producto del iva seleccionado): " + ObtenerDataAMostrar.ObtenerBaseImpoibleTotal(data, ordenar_iva_combox_.SelectedItem.ToString(), out añadido_por_iva_) + "€";
+                total_ivas_txt.Text = "Total añadido por IVA(excluyendo los no seleccionados): " + añadido_por_iva_ + "€";
             };
 
             ActualizarComboxConActividades();
@@ -45,11 +49,15 @@ namespace FacturacionFacilApp.MyScripts.MostarCuentas
             {
                 LibroDeRegistroPlaceHolder[] data = ObtenerDataAMostrar.ObtenerDataOrdenada(ordenar_clientes_combox_.SelectedItem.ToString(), ordenar_actividad_combox_.SelectedItem.ToString(), ordenar_iva_combox_.SelectedItem.ToString());
                 mostrar_data_.ItemsSource = data;
-                total_bImponible_txt.Text = "Total base imponible (solo los producto del iva seleccionado): " + ObtenerDataAMostrar.ObtenerBaseImpoibleTotal(data, ordenar_iva_combox_.SelectedItem.ToString());
+                float añadido_por_iva_ = 0;
+                total_bImponible_txt.Text = "Total base imponible (solo los producto del iva seleccionado): " + ObtenerDataAMostrar.ObtenerBaseImpoibleTotal(data, ordenar_iva_combox_.SelectedItem.ToString(), out añadido_por_iva_) + "€";
+                total_ivas_txt.Text = "Total añadido por IVA(excluyendo los no seleccionados): " + añadido_por_iva_ + "€";
             };
 
             mostrar_data_.ItemsSource = ObtenerDataAMostrar.ObtenerData();
-            total_bImponible_txt.Text = "Total base imponible (solo los producto del iva seleccionado): " + ObtenerDataAMostrar.ObtenerBaseImpoibleTotal(ObtenerDataAMostrar.ObtenerData(), ordenar_iva_combox_.Text) +"€";
+            float añadido_por_iva = 0;
+            total_bImponible_txt.Text = "Total base imponible (solo los producto del iva seleccionado): " + ObtenerDataAMostrar.ObtenerBaseImpoibleTotal(ObtenerDataAMostrar.ObtenerData(), ordenar_iva_combox_.SelectedItem.ToString(), out añadido_por_iva) + "€";
+            total_ivas_txt.Text = "Total añadido por IVA(excluyendo los no seleccionados): " + añadido_por_iva + "€";
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)

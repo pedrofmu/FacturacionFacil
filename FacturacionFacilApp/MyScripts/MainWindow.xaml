@@ -30,8 +30,9 @@
         </Style>
     </Window.Resources>
     <Grid Background="#fffaeb">
-        <Button x:Name="ingresos_btn_" Content="Ingreso" HorizontalAlignment="Left" Margin="350,150,0,0" VerticalAlignment="Top" Height="90" Width="350" FontSize="50" FontFamily="Cascadia Code SemiBold"/>
-        <Button x:Name="ver_cuentas_btn_" Content="Ver Cuentas" HorizontalAlignment="Left" Margin="350,292,0,0" VerticalAlignment="Top" Height="90" Width="350" FontSize="50" FontFamily="Cascadia Code SemiBold"/>
+        <Button x:Name="ingresos_btn_" Content="Ingreso" HorizontalAlignment="Center" Margin="0,100,0,0" VerticalAlignment="Top" Height="90" Width="350" FontSize="50" FontFamily="Cascadia Code SemiBold"/>
+        <Button x:Name="ver_cuentas_btn_" Content="Ver Cuentas" HorizontalAlignment="Center" Margin="0,242,0,0" VerticalAlignment="Top" Height="90" Width="350" FontSize="50" FontFamily="Cascadia Code SemiBold"/>
+        <Button x:Name="modificar_facturas_btn_" Content="Modificar" HorizontalAlignment="Center" Margin="0,379,0,0" VerticalAlignment="Top" Height="90" Width="350" FontSize="50" FontFamily="Cascadia Code SemiBold" Click="modificar_facturas_btn__Click"/>
     </Grid>
 </Window>
 

@@ -1,4 +1,5 @@
 ﻿using FacturacionFacilApp.MyScripts.Ingresos;
+using FacturacionFacilApp.MyScripts.ModificarFactura;
 using FacturacionFacilApp.MyScripts.MostarCuentas;
 using System;
 using System.Collections.Generic;
@@ -22,6 +23,7 @@ namespace FacturacionFacilApp
     {
         private FacturaWindow factura_window;
         private LibroDeRegistroWindow mostrar_cuentas_window;
+        private ModificarFacturaWindow modificar_factura_window;
 
         //El inicializador de la clase MainWindow
         public MainWindow()
@@ -62,6 +64,17 @@ namespace FacturacionFacilApp
 
             this.Close();
             mostrar_cuentas_window.Show();
+        }
+
+        private void modificar_facturas_btn__Click(object sender, RoutedEventArgs e)
+        {
+            if (modificar_factura_window is null)
+            {
+                modificar_factura_window = new ModificarFacturaWindow();
+            }
+
+            this.Close();
+            modificar_factura_window.Show();
         }
     }
 }

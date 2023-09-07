@@ -1,0 +1,32 @@
+﻿<Window x:Class="FacturacionFacilApp.MyScripts.ModificarFactura.ModificarFacturaWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FacturacionFacilApp.MyScripts.ModificarFactura"
+        mc:Ignorable="d"
+        Title="ModificarFacturaWindow" Height="720" Width="510">
+    <Grid Name="main_grid_">
+        <ComboBox x:Name="provedores_dropdown_" HorizontalAlignment="Left" Margin="55,33,0,0" VerticalAlignment="Top" Width="120" />
+        <Label x:Name="provedores_txt_" Content="Provedor" HorizontalAlignment="Left" Margin="55,8,0,0" VerticalAlignment="Top" Width="120" Height="25"/>
+        <ComboBox Name="clients_dropdown_" HorizontalAlignment="Left" Margin="55,154,0,0" VerticalAlignment="Top" Width="120" />
+        <Label Name="clients_txt_" Content="Cliente" HorizontalAlignment="Left" Margin="55,129,0,0" VerticalAlignment="Top" Width="120" Height="25"/>
+        <TextBox Name="fecha_box_"  HorizontalAlignment="Left" Margin="250,33,0,0" TextWrapping="Wrap" Text="Introduzca la fecha de hoy" VerticalAlignment="Top" Width="174" Height="22" />
+        <TextBlock Name="selecionar_letra_txt_" HorizontalAlignment="Left" Margin="250,134,0,0" TextWrapping="Wrap" Text="Selecciona la factura" VerticalAlignment="Top" Width="120"/>
+        <ComboBox Name="selecionar_letra_combobox_" HorizontalAlignment="Left" Margin="250,154,0,0" VerticalAlignment="Top" Width="120"/>
+        <Button Name="añadir_unidad_btn_" Content=" + " HorizontalAlignment="Left" Margin="434,244,0,0" VerticalAlignment="Top" Click="AñadirUnidadBTN"/>
+        <Button x:Name="eliminar_unidad_btn_" Content=" - " HorizontalAlignment="Left" Margin="459,244,0,0" VerticalAlignment="Top" Click="EliminarUnidadBTN" />
+        <Button x:Name="subir_fila_btn_" Content=" ⬆️ " HorizontalAlignment="Left" Margin="372,244,0,0" VerticalAlignment="Top" Click="SubirFilaBTN"/>
+        <Button x:Name="bajar_fila_btn_" Content=" ⬇️ " HorizontalAlignment="Left" Margin="394,244,0,0" VerticalAlignment="Top" Click="BajarFilaBTN"/>
+        <Label Name="irpf_txt_" Content="IRPF" HorizontalAlignment="Left" Margin="55,491,0,0" VerticalAlignment="Top" Width="120"/>
+        <ComboBox Name="irpf_dropdown_" HorizontalAlignment="Left" Margin="55,515,0,0" VerticalAlignment="Top" Width="120"></ComboBox>
+        <Button Name="guardad_factura_btn_" Content="Modificar" HorizontalAlignment="Left" Margin="364,575,0,0" VerticalAlignment="Top" Width="120" Click="GuardarFacturaBTN"/>
+        <Label x:Name="datos_pago_txt_" Content="Condiciones y forma de pago" HorizontalAlignment="Left" Margin="255,437,0,0" VerticalAlignment="Top" Width="174"/>
+        <TextBox Name="datos_del_pago_textbox_" HorizontalAlignment="Left" Margin="255,463,0,0" TextWrapping="Wrap" Text="Introduzca aquí los datos de pago" VerticalAlignment="Top" Width="217" Height="48"/>
+        <Button Content="Atras" HorizontalAlignment="Left" Margin="55,570,0,0" VerticalAlignment="Top" Width="120" Click="AtrasBTN"/>
+        <TextBox x:Name="actividad_dropdown_" HorizontalAlignment="Left" Margin="55,464,0,0" VerticalAlignment="Top" Width="120" Height="23" />
+        <Label x:Name="actividad_txt_" Content="Actividad" HorizontalAlignment="Left" Margin="55,438,0,0" VerticalAlignment="Top" Width="120" Height="25"/>
+        <ComboBox x:Name="ingresos_gastos_dropdown_" HorizontalAlignment="Left" Margin="383,155,0,0" VerticalAlignment="Top" Width="101"/>
+        <TextBlock x:Name="seleccionar_tipo_" HorizontalAlignment="Left" Margin="383,134,0,0" TextWrapping="Wrap" Text="Ingreso/Gasto" VerticalAlignment="Top" Width="120"/>
+    </Grid>
+</Window>

@@ -56,6 +56,32 @@ namespace FacturacionFacilApp.MyScripts
             }
         }
 
+        //Añade un nuevo producto
+        public void AñadirLinea(string _cantidad, string _tipo, string _precio_unidad, string _iva)
+        {
+            if (lineas is null)
+            {
+                lineas = new List<Linea>();
+            }
+
+            Linea nueva_linea = new Linea
+            {
+                indice = lineas.Count + 1,
+                numero_indice = new Label { Content = (lineas.Count + 1).ToString(), Width = 30, Height = 30, HorizontalAlignment = System.Windows.HorizontalAlignment.Left, VerticalAlignment = System.Windows.VerticalAlignment.Top },
+                unidades = new TextBox { Width = 60, Height = 20, Text = _cantidad, HorizontalAlignment = System.Windows.HorizontalAlignment.Left, VerticalAlignment = System.Windows.VerticalAlignment.Top },
+                tipo = new TextBox { Width = 108, Height = 20, Text = _tipo, HorizontalAlignment = System.Windows.HorizontalAlignment.Left, VerticalAlignment = System.Windows.VerticalAlignment.Top },
+                precio_unidad = new TextBox { Width = 108, Height = 20, Text = _precio_unidad, HorizontalAlignment = System.Windows.HorizontalAlignment.Left, VerticalAlignment = System.Windows.VerticalAlignment.Top },
+                iva = new TextBox { Width = 60, Height = 20, Text = _iva, HorizontalAlignment = System.Windows.HorizontalAlignment.Left, VerticalAlignment = System.Windows.VerticalAlignment.Top }
+            };
+
+            lineas.Add(nueva_linea);
+
+            if (lineas.Count > 5)
+            {
+                current_index = lineas.Count - 5;
+            }
+        }
+
         //Elimina el ultimo producto
         public void EliminarLinea()
         {

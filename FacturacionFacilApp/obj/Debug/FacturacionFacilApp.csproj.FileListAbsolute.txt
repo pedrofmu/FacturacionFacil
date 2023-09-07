@@ -81,3 +81,5 @@ C:\Users\pedro\Escritorio\Importante\Yolanda\ContabilidadSolution\FacturacionFac
 C:\Users\pedro\Escritorio\Importante\Yolanda\ContabilidadSolution\FacturacionFacilApp\bin\Debug\itext.bouncy-castle-adapter.xml
 C:\Users\pedro\Escritorio\Importante\Yolanda\ContabilidadSolution\FacturacionFacilApp\obj\Debug\MyScripts\LibroDeRegistro\LibroDeRegistroWindow.g.cs
 C:\Users\pedro\Escritorio\Importante\Yolanda\ContabilidadSolution\FacturacionFacilApp\obj\Debug\MyScripts\LibroDeRegistro\LibroDeRegistroWindow.baml
+C:\Users\pedro\Escritorio\Importante\Yolanda\ContabilidadSolution\FacturacionFacilApp\obj\Debug\MyScripts\ModificarFactura\ModificarFacturaWindow.g.cs
+C:\Users\pedro\Escritorio\Importante\Yolanda\ContabilidadSolution\FacturacionFacilApp\obj\Debug\MyScripts\ModificarFactura\ModificarFacturaWindow.baml

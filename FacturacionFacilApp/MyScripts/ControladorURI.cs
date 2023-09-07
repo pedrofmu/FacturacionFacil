@@ -9,7 +9,8 @@ namespace FacturacionFacilApp.MyScripts
     public static class ControladorURI
     {
         public static Uri ClientesJson { get; private set; } = new Uri("Json/Clientes.json", UriKind.Relative);
-        public static Uri FacturasJson { get; private set; } = new Uri("Json/Facturas.json", UriKind.Relative);
+        public static Uri IngresosFacturaJson { get; private set; } = new Uri("Json/Ingresos.json", UriKind.Relative);
+        public static Uri GastosFacturaJson { get; private set; } = new Uri("Json/Gastos.json", UriKind.Relative);
         public static Uri ProvedoresJson { get; private set; } = new Uri("Json/Proveedores.json", UriKind.Relative);
     }
 }

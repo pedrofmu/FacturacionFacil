@@ -35,7 +35,7 @@ namespace FacturacionFacilApp.MyScripts.Ingresos
             // Llamada a los métodos para refrescar los ComboBox
             RefreshLetraComboBox();
             RefreshIRPFComboBox();
-            RefreshActividadesComboBox();
+            RefreshIngresoGastoBox();
 
             // Creación de instancias de controladores
             lista_de_productos_controller = new ListaDeProductosController(main_grid_, 277);
@@ -79,16 +79,13 @@ namespace FacturacionFacilApp.MyScripts.Ingresos
             }
         }
 
-        // Método para refrescar el ComboBox para seleccionar una actividad
-        private void RefreshActividadesComboBox()
+        private void RefreshIngresoGastoBox() 
         {
-            string[] actividades = { "Formacion", "Ventas", "Servicios" };
-
-            foreach (string act in actividades)
-            {
-                actividad_dropdown_.Items.Add(act);
-            }
+            ingresos_gastos_dropdown_.Items.Add("Ingresos");
+            ingresos_gastos_dropdown_.Items.Add("Gastos");
         }
+        
+
 
         // Método para manejar el evento de hacer clic en "Guardar factura"
         private void GuardarFacturaBTN(object sender, RoutedEventArgs e)
@@ -152,7 +149,7 @@ namespace FacturacionFacilApp.MyScripts.Ingresos
                 return;
             }
 
-            factura_controller.CrearFactura(letra_selecionada, provedor, cliente, fecha, unidades_compradas, irpf_dropdown_.Text, datos_del_pago, actividad_dropdown_.Text);
+            factura_controller.CrearFactura(letra_selecionada, provedor, cliente, fecha, unidades_compradas, irpf_dropdown_.Text, datos_del_pago, actividad_dropdown_.Text, ingresos_gastos_dropdown_.Text);
         }
 
         // Método para comprobar si una fecha es válida

@@ -12,17 +12,10 @@ namespace FacturacionFacilApp.MyScripts.Ingresos.JsonControllers
     //Clase para crear la factura
     public class CrearFacturaController
     {
-        public static Uri json_path { get; private set; }
-
-        public CrearFacturaController()
-        {
-            json_path = new Uri("Json/Facturas.json", UriKind.Relative);
-        }
-
         //Obtine los valores para la factura y los crea
-        public void CrearFactura(string _letra_factura, Proveedor _provedor, Cliente _cliente, string _fecha, List<UnidadComprada> _unidades_compradas, string _irpf, string _condiciones_forma_pago, string _actividad)
+        public void CrearFactura(string _letra_factura, Proveedor _provedor, Cliente _cliente, string _fecha, List<UnidadComprada> _unidades_compradas, string _irpf, string _condiciones_forma_pago, string _actividad, string _ingreso_gasto)
         {
-            List<Factura> factura_list = FacturasJsonController.GetFacturasFromJson(json_path.ToString());
+            List<Factura> factura_list = FacturasJsonController.GetFacturasFromJson(_ingreso_gasto == "Gastos" ? ControladorURI.GastosFacturaJson.ToString() : ControladorURI.IngresosFacturaJson.ToString());
 
             float dinero_total = ConseguirPrecioTotal(_unidades_compradas);
             string numero = HacerNumeroDeFactura(_letra_factura, factura_list);
@@ -58,7 +51,47 @@ namespace FacturacionFacilApp.MyScripts.Ingresos.JsonControllers
             {
                 factura_list.Add(factura);
 
-                FacturasJsonController.SerializeFacturas(factura_list, json_path.ToString());
+                FacturasJsonController.SerializeFacturas(factura_list, _ingreso_gasto == "Gastos" ? ControladorURI.GastosFacturaJson.ToString() : ControladorURI.IngresosFacturaJson.ToString());
+            }
+        }
+
+        public void ModificarFactura(string _numero_factura, Proveedor _provedor, Cliente _cliente, string _fecha, List<UnidadComprada> _unidades_compradas, string _irpf, string _condiciones_forma_pago, string _actividad, string _ingreso_gasto)
+        {
+            List<Factura> factura_list = FacturasJsonController.GetFacturasFromJson(_ingreso_gasto == "Gastos" ? ControladorURI.GastosFacturaJson.ToString() : ControladorURI.IngresosFacturaJson.ToString());
+
+            float dinero_total = ConseguirPrecioTotal(_unidades_compradas);
+            string numero = _numero_factura;
+
+            float añadido_por_iva = ObtenerAñadidoPorIVA(_unidades_compradas);
+
+            float porcentaje_irpf = 0;
+            if (!float.TryParse(_irpf, out porcentaje_irpf))
+            {
+                porcentaje_irpf = 1;
+            }
+            else
+            {
+                porcentaje_irpf = porcentaje_irpf / 100;
+            }
+
+            Factura facturaToModify = factura_list.FirstOrDefault(getFactura => getFactura.Numero == _numero_factura);
+
+            facturaToModify.Numero = numero;
+            facturaToModify.Proveedor = _provedor;
+            facturaToModify.Cliente = _cliente;
+            facturaToModify.Fecha = _fecha;
+            facturaToModify.UnidadesCompradas = _unidades_compradas.ToArray();
+            facturaToModify.TotalBaseImponible = dinero_total;
+            facturaToModify.IRPF = _irpf;
+            facturaToModify.AñadidoPorIVA = añadido_por_iva;
+            facturaToModify.ImporteTotalFinal = dinero_total + añadido_por_iva - (dinero_total * porcentaje_irpf);
+            facturaToModify.Actividad = _actividad;
+
+            if (CrearPDFDeFactura.CrearPDF(facturaToModify))
+            {
+                factura_list.Add(facturaToModify);
+
+                FacturasJsonController.SerializeFacturas(factura_list, _ingreso_gasto == "Gastos" ? ControladorURI.GastosFacturaJson.ToString() : ControladorURI.IngresosFacturaJson.ToString());
             }
         }
 

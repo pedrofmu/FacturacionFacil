@@ -5,17 +5,19 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FacturacionFacilApp.MyScripts.MostarCuentas"
         mc:Ignorable="d"
-        Title="MostrarIngresos" Height="580" Width="915">
+        Title="MostrarIngresos" Height="580" Width="890">
     <Grid>
-        <DataGrid Name="mostrar_data_" ItemsSource="{Binding YourDataCollection}" Margin="10,54,10,99">
+        <DataGrid Name="mostrar_data_" ItemsSource="{Binding YourDataCollection}" Margin="10,54,10,121">
             <DataGrid.Columns>
             </DataGrid.Columns>
         </DataGrid>
-        <Button Name="atras_btn_" Content="Atras" HorizontalAlignment="Left" Margin="10,534,0,0" VerticalAlignment="Top" Width="57" Click="Button_Click"/>
+        <Button Name="atras_btn_" Content="Atras" HorizontalAlignment="Left" Margin="10,498,0,0" VerticalAlignment="Top" Width="57" Click="Button_Click"/>
         <ComboBox Name="ordenar_iva_combox_" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="120"/>
         <ComboBox Name="ordenar_clientes_combox_" HorizontalAlignment="Left" Margin="149,10,0,0" VerticalAlignment="Top" Width="120"/>
         <ComboBox x:Name="ordenar_actividad_combox_" HorizontalAlignment="Left" Margin="292,10,0,0" VerticalAlignment="Top" Width="120"/>
-        <TextBlock Name="total_bImponible_txt" HorizontalAlignment="Left" Margin="10,484,0,0" TextWrapping="Wrap" Text="Total base imponible:" VerticalAlignment="Top" Width="772" Height="16"/>
-        <TextBlock Name="total_ivas_txt" HorizontalAlignment="Left" Margin="10,505,0,0" TextWrapping="Wrap" Text="Total añadido por IVA(excluyendo los no seleccionados)" VerticalAlignment="Top" Width="402" Height="24"/>
+        <TextBlock Name="total_bImponible_txt" HorizontalAlignment="Left" Margin="10,448,0,0" TextWrapping="Wrap" Text="Total base imponible:" VerticalAlignment="Top" Width="772" Height="16"/>
+        <TextBlock Name="total_ivas_txt" HorizontalAlignment="Left" Margin="10,469,0,0" TextWrapping="Wrap" Text="Total añadido por IVA(excluyendo los no seleccionados)" VerticalAlignment="Top" Width="402" Height="24"/>
+        <ComboBox x:Name="ingresos_gastos_combox"  HorizontalAlignment="Left" Margin="734,10,0,0" VerticalAlignment="Top" Width="120">
+        </ComboBox>
     </Grid>
 </Window>

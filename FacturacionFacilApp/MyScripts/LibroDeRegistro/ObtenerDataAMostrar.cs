@@ -11,6 +11,8 @@ namespace FacturacionFacilApp.MyScripts.LibroDeRegistro
 {
     public class ObtenerDataAMostrar
     {
+        public static string facturaURI = ControladorURI.IngresosFacturaJson.ToString();
+
         public static float ObtenerBaseImpoibleTotal(LibroDeRegistroPlaceHolder[] _data, string _IVA, out float _añadido_por_iva)
         {
             _añadido_por_iva = 0;
@@ -43,7 +45,7 @@ namespace FacturacionFacilApp.MyScripts.LibroDeRegistro
         {
             List<UnidadComprada> unidades = new List<UnidadComprada>();
 
-            List<Factura> facturas = FacturasJsonController.GetFacturasFromJson(ControladorURI.FacturasJson.ToString());
+            List<Factura> facturas = FacturasJsonController.GetFacturasFromJson(facturaURI);
 
             // Filtrar las facturas que están en _facturasID
             facturas = facturas.Where(factura => _facturasID.Contains(factura.Numero)).ToList();
@@ -67,7 +69,7 @@ namespace FacturacionFacilApp.MyScripts.LibroDeRegistro
         }
         public static LibroDeRegistroPlaceHolder[] ObtenerData()
         {
-            List<Factura> facturas = FacturasJsonController.GetFacturasFromJson(ControladorURI.FacturasJson.ToString());
+            List<Factura> facturas = FacturasJsonController.GetFacturasFromJson(facturaURI);
             List<LibroDeRegistroPlaceHolder> data_a_mostrar = new List<LibroDeRegistroPlaceHolder>();
 
             foreach (Factura factura in facturas)

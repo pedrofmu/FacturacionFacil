@@ -2,10 +2,10 @@
   {
     "Numero": "a1",
     "Cliente": {
-      "Nombre": "Vida Sana",
-      "Identificador": "T67",
-      "Direccion": "Vida sana city",
-      "Contacto": "vidasana@mail.com"
+      "Nombre": "Nintendo",
+      "Identificador": "E56",
+      "Direccion": "Nintendo INC",
+      "Contacto": "info@nintendo.inc"
     },
     "Proveedor": {
       "Nombre": "Yolanda",
@@ -27,7 +27,7 @@
     "TotalBaseImponible": 19.0,
     "IRPF": "Ninguno",
     "AñadidoPorIVA": 1.89999962,
-    "ImporteTotalFinal": 20.9,
+    "ImporteTotalFinal": 1.89999962,
     "CondicionesFormaDePago": "Pago en efectivo, entregado 5 y devuelto 2.9",
     "Actividad": "Formacion"
   },
@@ -478,5 +478,117 @@
     "ImporteTotalFinal": 436.5,
     "CondicionesFormaDePago": "En efectivo",
     "Actividad": "Ventas"
+  },
+  {
+    "Numero": "a13",
+    "Cliente": {
+      "Nombre": "Vida Sana",
+      "Identificador": "T67",
+      "Direccion": "Vida sana city",
+      "Contacto": "vidasana@mail.com"
+    },
+    "Proveedor": {
+      "Nombre": "Yolanda",
+      "Identificador": "G65",
+      "Direccion": "Mi casa",
+      "Contacto": "yoli@gmail.com"
+    },
+    "Fecha": "2023-08-09",
+    "UnidadesCompradas": [
+      {
+        "UnidadesDelProducto": 5,
+        "TipoDeUnidad": "Chocolate",
+        "PrecioPorUnidad": 5.0,
+        "IVA": 7.0,
+        "AñadidoPorIVA": 1.75,
+        "PrecioConIVA": 26.75
+      },
+      {
+        "UnidadesDelProducto": 6,
+        "TipoDeUnidad": "Pan",
+        "PrecioPorUnidad": 10.0,
+        "IVA": 10.0,
+        "AñadidoPorIVA": 6.0,
+        "PrecioConIVA": 66.0
+      }
+    ],
+    "TotalBaseImponible": 85.0,
+    "IRPF": "7",
+    "AñadidoPorIVA": 7.75,
+    "ImporteTotalFinal": 86.8,
+    "CondicionesFormaDePago": "Pago en efectivo",
+    "Actividad": "Venta"
+  },
+  {
+    "Numero": "b1",
+    "Cliente": {
+      "Nombre": "Vida Sana",
+      "Identificador": "T67",
+      "Direccion": "Vida sana city",
+      "Contacto": "vidasana@mail.com"
+    },
+    "Proveedor": {
+      "Nombre": "Yolanda",
+      "Identificador": "G65",
+      "Direccion": "Mi casa",
+      "Contacto": "yoli@gmail.com"
+    },
+    "Fecha": "2023-08-09",
+    "UnidadesCompradas": [
+      {
+        "UnidadesDelProducto": 3,
+        "TipoDeUnidad": "Pan",
+        "PrecioPorUnidad": 16.0,
+        "IVA": 7.0,
+        "AñadidoPorIVA": 3.36000061,
+        "PrecioConIVA": 51.36
+      },
+      {
+        "UnidadesDelProducto": 5,
+        "TipoDeUnidad": "Remolacha",
+        "PrecioPorUnidad": 20.0,
+        "IVA": 21.0,
+        "AñadidoPorIVA": 21.0,
+        "PrecioConIVA": 121.0
+      }
+    ],
+    "TotalBaseImponible": 148.0,
+    "IRPF": "7",
+    "AñadidoPorIVA": 24.36,
+    "ImporteTotalFinal": 162.0,
+    "CondicionesFormaDePago": "Pago en efectivo",
+    "Actividad": "Venta"
+  },
+  {
+    "Numero": "a1",
+    "Cliente": {
+      "Nombre": "Nintendo",
+      "Identificador": "E56",
+      "Direccion": "Nintendo INC",
+      "Contacto": "info@nintendo.inc"
+    },
+    "Proveedor": {
+      "Nombre": "Yolanda",
+      "Identificador": "G65",
+      "Direccion": "Mi casa",
+      "Contacto": "yoli@gmail.com"
+    },
+    "Fecha": "2023-07-08",
+    "UnidadesCompradas": [
+      {
+        "UnidadesDelProducto": 1,
+        "TipoDeUnidad": "Cinta de beacon",
+        "PrecioPorUnidad": 19.0,
+        "IVA": 10.0,
+        "AñadidoPorIVA": 1.89999962,
+        "PrecioConIVA": 20.9
+      }
+    ],
+    "TotalBaseImponible": 19.0,
+    "IRPF": "Ninguno",
+    "AñadidoPorIVA": 1.89999962,
+    "ImporteTotalFinal": 1.89999962,
+    "CondicionesFormaDePago": "Pago en efectivo, entregado 5 y devuelto 2.9",
+    "Actividad": "Formacion"
   }
 ]

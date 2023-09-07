@@ -24,6 +24,10 @@ namespace FacturacionFacilApp.MyScripts.MostarCuentas
         {
             InitializeComponent();
 
+            ingresos_gastos_combox.Items.Clear();
+            ingresos_gastos_combox.Items.Add("Ingresos");
+            ingresos_gastos_combox.Items.Add("Gastos");
+
             ActualizarComboBoxConIVAs();
             ordenar_iva_combox_.SelectionChanged += (object o, SelectionChangedEventArgs e) => 
             {
@@ -54,6 +58,17 @@ namespace FacturacionFacilApp.MyScripts.MostarCuentas
                 total_ivas_txt.Text = "Total añadido por IVA(excluyendo los no seleccionados): " + añadido_por_iva_ + "€";
             };
 
+            ingresos_gastos_combox.SelectionChanged += (object o, SelectionChangedEventArgs e) =>
+            {
+                ObtenerDataAMostrar.facturaURI = ingresos_gastos_combox.SelectedItem.ToString()  == "Gastos" ? ControladorURI.GastosFacturaJson.ToString() : ControladorURI.IngresosFacturaJson.ToString();
+
+                LibroDeRegistroPlaceHolder[] data = ObtenerDataAMostrar.ObtenerDataOrdenada(ordenar_clientes_combox_.SelectedItem.ToString(), ordenar_actividad_combox_.SelectedItem.ToString(), ordenar_iva_combox_.SelectedItem.ToString());
+                mostrar_data_.ItemsSource = data;
+                float añadido_por_iva_ = 0;
+                total_bImponible_txt.Text = "Total base imponible (solo los producto del iva seleccionado): " + ObtenerDataAMostrar.ObtenerBaseImpoibleTotal(data, ordenar_iva_combox_.SelectedItem.ToString(), out añadido_por_iva_) + "€";
+                total_ivas_txt.Text = "Total añadido por IVA(excluyendo los no seleccionados): " + añadido_por_iva_ + "€";
+            };
+
             mostrar_data_.ItemsSource = ObtenerDataAMostrar.ObtenerData();
             float añadido_por_iva = 0;
             total_bImponible_txt.Text = "Total base imponible (solo los producto del iva seleccionado): " + ObtenerDataAMostrar.ObtenerBaseImpoibleTotal(ObtenerDataAMostrar.ObtenerData(), ordenar_iva_combox_.SelectedItem.ToString(), out añadido_por_iva) + "€";
@@ -70,7 +85,7 @@ namespace FacturacionFacilApp.MyScripts.MostarCuentas
 
         void ActualizarComboBoxConIVAs()
         {
-            List<Factura> facturas = FacturasJsonController.GetFacturasFromJson(ControladorURI.FacturasJson.ToString());
+            List<Factura> facturas = FacturasJsonController.GetFacturasFromJson(ControladorURI.IngresosFacturaJson.ToString());
 
             List<float> final_ivas = new List<float>(); 
             foreach (Factura factura in facturas)
@@ -117,7 +132,7 @@ namespace FacturacionFacilApp.MyScripts.MostarCuentas
 
         void ActualizarComboxConActividades()
         {
-            List<Factura> facturas = FacturasJsonController.GetFacturasFromJson(ControladorURI.FacturasJson.ToString());
+            List<Factura> facturas = FacturasJsonController.GetFacturasFromJson(ControladorURI.IngresosFacturaJson.ToString());
 
             List<string> actividades = new List<string>();
             foreach (Factura factura in facturas)

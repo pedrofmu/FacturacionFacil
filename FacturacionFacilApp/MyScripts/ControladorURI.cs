@@ -7,6 +7,7 @@ using System.IO;
 
 namespace FacturacionFacilApp.MyScripts
 {
+   //esta clase guarda las direcciones a los diferentes archivos y se asegura de que esten correctamente
     public static class ControladorURI
     {
         public static string BasePath { get; private set; } = AppDomain.CurrentDomain.BaseDirectory;

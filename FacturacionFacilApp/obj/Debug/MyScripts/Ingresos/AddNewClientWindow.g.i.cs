@@ -84,7 +84,7 @@ namespace FacturacionFacilApp.MyScripts.Ingresos {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/FacturacionFacilApp;component/myscripts/ingresos/addnewclientwindow.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/FacturacionFacil;component/myscripts/ingresos/addnewclientwindow.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\MyScripts\Ingresos\AddNewClientWindow.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

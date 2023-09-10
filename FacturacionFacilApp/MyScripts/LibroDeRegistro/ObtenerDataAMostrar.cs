@@ -221,7 +221,7 @@ namespace FacturacionFacilApp.MyScripts.LibroDeRegistro
             return return_data.ToArray();
         }
 
-        private static float ObtenerRetenidoPorIRPF(Factura _factura)
+        public static float ObtenerRetenidoPorIRPF(Factura _factura)
         {
             float total_base_imponible = _factura.TotalBaseImponible;
 

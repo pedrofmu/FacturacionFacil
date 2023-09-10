@@ -1,21 +1,10 @@
-﻿using FacturacionFacilApp.MyScripts.Ingresos;
+﻿using FacturacionFacilApp.MyScripts;
+using FacturacionFacilApp.MyScripts.Ingresos;
 using FacturacionFacilApp.MyScripts.ModificarFactura;
 using FacturacionFacilApp.MyScripts.MostarCuentas;
 using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+
 
 namespace FacturacionFacilApp
 {
@@ -29,11 +18,14 @@ namespace FacturacionFacilApp
         public MainWindow()
         {
             InitializeComponent();
+
+            ControladorURI.CheckURI();
              
             try 
             {
-                ingresos_btn_.Click += AbrirCrearIngreso;
+                crear_factura_btn_.Click += AbrirCrearIngreso;
                 ver_cuentas_btn_.Click += AbirirVerCuentas;
+                modificar_facturas_btn_.Click += AbrirModificarFacturas;
             }
             catch
             {
@@ -66,7 +58,8 @@ namespace FacturacionFacilApp
             mostrar_cuentas_window.Show();
         }
 
-        private void modificar_facturas_btn__Click(object sender, RoutedEventArgs e)
+        //Esta funcion es llamada para cambiar a la pantalla de modificar la factura
+        private void AbrirModificarFacturas(object sender, RoutedEventArgs e)
         {
             if (modificar_factura_window is null)
             {

@@ -6,33 +6,10 @@
         xmlns:local="clr-namespace:FacturacionFacilApp"
         mc:Ignorable="d"
         Title="MainWindow" Height="600" Width="1000">
-    <Window.Resources>
-        <Style TargetType="Button">
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate TargetType="Button">
-                        <Border x:Name="border" Background="#967c52" BorderThickness="0" CornerRadius="10">
-                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" TextBlock.Foreground="#ffffff" />
-                        </Border>
-                        <ControlTemplate.Triggers>
-                            <Trigger Property="IsMouseOver" Value="True">
-                                <Setter TargetName="border" Property="Background" Value="#cfcfcf" />
-                                <Setter TargetName="border" Property="BorderBrush" Value="#967c52" />
-                            </Trigger>
-                            <Trigger Property="IsPressed" Value="True">
-                                <Setter TargetName="border" Property="Background" Value="#fffaeb" />
-                                <Setter TargetName="border" Property="BorderBrush" Value="#967c52" />
-                            </Trigger>
-                        </ControlTemplate.Triggers>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-        </Style>
-    </Window.Resources>
-    <Grid Background="#fffaeb">
-        <Button x:Name="ingresos_btn_" Content="Ingreso" HorizontalAlignment="Center" Margin="0,100,0,0" VerticalAlignment="Top" Height="90" Width="350" FontSize="50" FontFamily="Cascadia Code SemiBold"/>
-        <Button x:Name="ver_cuentas_btn_" Content="Ver Cuentas" HorizontalAlignment="Center" Margin="0,242,0,0" VerticalAlignment="Top" Height="90" Width="350" FontSize="50" FontFamily="Cascadia Code SemiBold"/>
-        <Button x:Name="modificar_facturas_btn_" Content="Modificar" HorizontalAlignment="Center" Margin="0,379,0,0" VerticalAlignment="Top" Height="90" Width="350" FontSize="50" FontFamily="Cascadia Code SemiBold" Click="modificar_facturas_btn__Click"/>
+    <Grid>
+        <Button x:Name="crear_factura_btn_" Content="Crear factura" HorizontalAlignment="Center" Margin="0,100,0,0" VerticalAlignment="Top" Height="90" Width="350" FontSize="42"  />
+        <Button x:Name="ver_cuentas_btn_" Content="Ver Cuentas" HorizontalAlignment="Center" Margin="0,242,0,0" VerticalAlignment="Top" Height="90" Width="350" FontSize="42" />
+        <Button x:Name="modificar_facturas_btn_" Content="Modificar" HorizontalAlignment="Center" Margin="0,379,0,0" VerticalAlignment="Top" Height="90" Width="350" FontSize="42" />
     </Grid>
 </Window>
 

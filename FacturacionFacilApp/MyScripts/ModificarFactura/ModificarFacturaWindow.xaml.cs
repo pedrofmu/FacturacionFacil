@@ -15,7 +15,6 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using iText.Commons.Bouncycastle.Asn1.Pkcs;
 
 namespace FacturacionFacilApp.MyScripts.ModificarFactura
 {
@@ -37,7 +36,8 @@ namespace FacturacionFacilApp.MyScripts.ModificarFactura
             // Inicialización de componentes de la ventana
             InitializeComponent();
 
-            // Llamada a los métodos para refrescar los ComboBox
+
+            // Llamada a los métodos para refrescar los elementos
             RefreshIRPFComboBox();
             RefreshIngresoGastoBox();
             RefreshLetraComboBox();
@@ -49,32 +49,9 @@ namespace FacturacionFacilApp.MyScripts.ModificarFactura
             factura_controller = new CrearFacturaController();
 
             //Actualizar la factura
-            selecionar_letra_combobox_.SelectionChanged += (object o, SelectionChangedEventArgs e) =>
+            seleccionar_factura_drowpdown_.SelectionChanged += (object o, SelectionChangedEventArgs e) =>
             {
-                actual_factura = facturas.FirstOrDefault(factura => factura.Numero == selecionar_letra_combobox_.SelectedItem.ToString());
-
-                // Limpiar y agregar elemento en irpf_dropdown_
-                irpf_dropdown_.Items.Clear();
-                irpf_dropdown_.Items.Add(actual_factura.IRPF);
-                irpf_dropdown_.SelectedItem = actual_factura.IRPF;
-
-                // Limpiar y agregar elementos en otros ComboBox
-                clients_dropdown_.SelectedItem = actual_factura.Cliente.Nombre;
-
-                provedores_dropdown_.SelectedItem = actual_factura.Proveedor.Nombre;
-
-                // Agregar elementos a lista_de_productos_controller
-                foreach (UnidadComprada unidad in actual_factura.UnidadesCompradas)
-                {
-                    lista_de_productos_controller.AñadirLinea($"{unidad.UnidadesDelProducto}", unidad.TipoDeUnidad, $"{unidad.PrecioPorUnidad}", $"{unidad.IVA}");
-                }
-
-                lista_de_productos_controller.ActualizarLineas();
-
-                // Otros ComboBox y cajas de texto
-                fecha_box_.Text = actual_factura.Fecha;
-                actividad_dropdown_.Text = actual_factura.Actividad;
-                datos_del_pago_textbox_.Text = actual_factura.CondicionesFormaDePago;
+                ChangeFactura();
             };
 
             ingresos_gastos_dropdown_.SelectionChanged += (object o, SelectionChangedEventArgs e) =>
@@ -83,16 +60,47 @@ namespace FacturacionFacilApp.MyScripts.ModificarFactura
             };
         }
 
-        // Método para refrescar el ComboBox para seleccionar una letra
+        //Actualizar la factura a modificar
+        private void ChangeFactura()
+        {
+            lista_de_productos_controller.EliminarTodasLasLineas();
+
+            actual_factura = facturas.FirstOrDefault(factura => factura.Numero == seleccionar_factura_drowpdown_.SelectedItem.ToString());
+
+            // Limpiar y agregar elemento en irpf_dropdown_
+            irpf_dropdown_.Items.Clear();
+            irpf_dropdown_.Items.Add(actual_factura.IRPF);
+            irpf_dropdown_.SelectedItem = actual_factura.IRPF;
+
+            // Limpiar y agregar elementos en otros ComboBox
+            clients_dropdown_.SelectedItem = actual_factura.Cliente.Nombre;
+
+            provedores_dropdown_.SelectedItem = actual_factura.Proveedor.Nombre;
+
+            // Agregar elementos a lista_de_productos_controller
+            foreach (UnidadComprada unidad in actual_factura.UnidadesCompradas)
+            {
+                lista_de_productos_controller.AñadirLinea($"{unidad.UnidadesDelProducto}", unidad.TipoDeUnidad, $"{unidad.PrecioPorUnidad}", $"{unidad.IVA}");
+            }
+
+            lista_de_productos_controller.ActualizarLineas();
+
+            // Otros ComboBox y cajas de texto
+            fecha_box_.Text = actual_factura.Fecha;
+            actividad_dropdown_.Text = actual_factura.Actividad;
+            datos_del_pago_textbox_.Text = actual_factura.CondicionesFormaDePago;
+        }
+
+        // Método para refrescar el ComboBox para seleccionar una factura
         private void RefreshLetraComboBox()
         {
             List<Factura> facturasFromJson = FacturasJsonController.GetFacturasFromJson(ingresos_gastos_dropdown_.SelectedItem.ToString() == "Ingresos" ?
                 ControladorURI.IngresosFacturaJson.ToString() : ControladorURI.GastosFacturaJson.ToString());
 
-            selecionar_letra_combobox_.Items.Clear();
+            seleccionar_factura_drowpdown_.Items.Clear();
             foreach (Factura factura in facturasFromJson)
             {
-                selecionar_letra_combobox_.Items.Add(factura.Numero);
+                seleccionar_factura_drowpdown_.Items.Add(factura.Numero);
             }
 
             facturas = facturasFromJson; 
@@ -125,14 +133,14 @@ namespace FacturacionFacilApp.MyScripts.ModificarFactura
 
 
 
-        // Método para manejar el evento de hacer clic en "Guardar factura"
+        // Método para manejar el evento de hacer clic en "Modificar factura"
         private void GuardarFacturaBTN(object sender, RoutedEventArgs e)
         {
             // Obtener la letra seleccionada del ComboBox
-            string letra_selecionada = actual_factura.Numero;
-            if (selecionar_letra_combobox_.SelectedItem != null)
+            string letra_selecionada = "";
+            if (seleccionar_factura_drowpdown_.SelectedItem != null)
             {
-                object valor_seleccionado = selecionar_letra_combobox_.SelectedItem;
+                object valor_seleccionado = seleccionar_factura_drowpdown_.SelectedItem;
                 letra_selecionada = valor_seleccionado.ToString();
             }
             else

@@ -13,7 +13,7 @@ La aplicación es muy sencilla de usar. Puedes crear, modificar y visualizar tod
 
 Cuando creas una factura, esta se genera en formato PDF. Para personalizar la apariencia de tus facturas, simplemente modifica el archivo CSS que se encuentra en la carpeta "/FacturaStyle".
 
-##Contacto
+## Contacto
 Si tienes preguntas, sugerencias o deseas colaborar con el proyecto, no dudes en contactarme:
 
 Twitter: @pedrofmdev

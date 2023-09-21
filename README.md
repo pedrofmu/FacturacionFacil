@@ -16,6 +16,5 @@ Cuando creas una factura, esta se genera en formato PDF. Para personalizar la ap
 ## Contacto
 Si tienes preguntas, sugerencias o deseas colaborar con el proyecto, no dudes en contactarme:
 
-Twitter: @pedrofmdev
 Correo Electrónico: contacto@pedrofm.dev
 ### ¡Gracias por tu interés!

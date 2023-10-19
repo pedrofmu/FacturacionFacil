@@ -5,8 +5,7 @@
 Este repositorio contiene todos los archivos de una aplicación diseñada para facilitar el proceso de facturación para autónomos y pequeñas empresas. Si deseas modificar el proyecto o crear tu propia versión, siéntete libre de hacerlo.
 
 ## Guía Rápida
-Clonar el Repositorio
-Primero, clona este repositorio en tu dispositivo. Este proyecto está desarrollado en Visual Studio, por lo que no deberías tener dificultades para abrirlo.
+Primero, clona este repositorio en tu dispositivo. Una vez clonado deberías ser capaz de abrirlo utilizando visual studio. 
 
 ## Funcionamiento
 La aplicación es muy sencilla de usar. Puedes crear, modificar y visualizar todas las facturas. Todos los datos se almacenan en archivos .json, los cuales puedes encontrar en la carpeta "json" del proyecto compilado.
